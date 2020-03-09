@@ -15,6 +15,19 @@
     </entry>
     
     
+    
+    <entry>
+      <title>PID控制算法详解</title>
+      <link href="/posts/c659.html"/>
+      <url>/posts/c659.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="PID是什么？"><a href="#PID是什么？" class="headerlink" title="PID是什么？"></a>PID是什么？</h2><p>PID控制是一种自动控制方式，它可以使得被控对象按照设定量运行。常见的PID控制例子有无人机自平稳，平衡车自平衡，空调控制房间温度恒定等。<br><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/17.jpg" alt=""></p><h2 id="那么PID是什么控制原理？"><a href="#那么PID是什么控制原理？" class="headerlink" title="那么PID是什么控制原理？"></a>那么PID是什么控制原理？</h2><p>为什么叫“PID”?我们举一个例子做说明：假设你在推箱子，你需要将箱子推到距离你100米处的终点，那你应该用什么方法才能又快又准确地将箱子推到目的地？</p><p>最简单好用的方法是：在距离目的地远的地方用大力气推<br>                                      在距离目的地近的地方用小力气推<br> 抛开物理公式，用直觉想想看，要想快准狠的到达目的地，最理想的方式是不是推力和距离成比例？在距离远的时候因为推力大所以速度快，可以节省时间；在距离近的时候减小推力，防止速度太快冲过了头。随着距离越来越近，推力越来越小。</p><p> <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/16.JPG" alt=""></p><p><strong>这个距离和推力成比例的思想就是PID控制理论中三大核心内容之一——比例控制，英文单词是Proportion，简写成P</strong>。</p><p>由于箱子和地面有摩擦力，在距离100米处给的推力大可以轻松推动箱子，但在距离5米地方可能因为推力小推不动箱子了。这时由于距离较短，依据比例控制得到的推力一直不足以推动箱子，所以箱子就会一直处在距离目的地5米的地方不动。这种和设定量一直存在静态误差的现象也称为静差，我们要想办法消除静差。</p><p><strong>小贴士:</strong>通常电子控制系统都是每隔一段时间查看当前状态和设定量是否还有偏差，如果有则继续制动以消除偏差，我们可以利用这一特性消除静差。</p><p>回到推箱子事件中，假设我们每秒观测一次当前位置和目的地的距离，我们将每次的距离值累加起来。上一秒距离5米，这一秒还是距离5米，则累加值就会是10米，下一秒距离如果还是5米，则累加值就是15米。将累加值乘以一个系数添加到推力中，则随着时间的延长，终有一刻会再次推动箱子。最终实现哪怕有一丁点的静差，都会被累加值消除掉，使得控制对象精准等于设定量。</p><p>** 这个累加消除静差的思想就是PID控制理论中三大核心内容之一——积分控制，积分就是累加这个动作的美称，积分英文单词是Integration，简写成I**。此外，由于距离和推力的比例设定过强或者箱子和地面的摩擦力太小，有可能造成箱子被推过头，然后再推回来，往往复复好几次才停下来的结果。我们希望箱子能尽快推到正确位置，所以必须减少这种震荡调节的次数。为了让箱子在即将到达目的地的时候能及时减速停下来，我们必须关注箱子的距离的变化率，或者说是速度。我们将箱子的距离的变化率也乘以一个系数作为阻力，将这个阻力叠加到推力上，如果上一时刻的距离和这一时刻的距离相差太大，即箱子推动速度太快了，推力就会因为阻力大而变小一点；如果上一时刻的距离和这一时刻的距离相差不太大，推力就会因为阻力小而基本不受影响。这样就可以避免快到终点时因为用力过猛而推过头。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
   
   
 </search>

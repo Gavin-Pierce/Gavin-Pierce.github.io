@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="风景, HTML,github,JavaScript,c++,hexo,Vue.js等">
+    <meta name="keywords" content="PID控制算法详解, HTML,github,JavaScript,c++,hexo,Vue.js等">
     <meta name="description" content="专注于C/C++,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>风景 | Gavin</title>
+    <title>PID控制算法详解 | Gavin</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/awesome/css/all.css">
@@ -502,18 +502,16 @@
 
 </header>
 
-    <link rel="stylesheet" href="/css/gallery.css">
-<link type="text/css" href="/libs/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link type="text/css" href="/libs/justifiedGallery/justifiedGallery.min.css" rel="stylesheet">
+    
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">风景</h1>
+                    <h1 class="description center-align post-title">PID控制算法详解</h1>
                 </div>
             </div>
         </div>
@@ -522,40 +520,674 @@
 
 
 
-<div class="container">
-    <div class="photo-wrapper">
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-02-20
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    3 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="PID是什么？"><a href="#PID是什么？" class="headerlink" title="PID是什么？"></a>PID是什么？</h2><p>PID控制是一种自动控制方式，它可以使得被控对象按照设定量运行。常见的PID控制例子有无人机自平稳，平衡车自平衡，空调控制房间温度恒定等。<br><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/17.jpg" alt=""></p>
+<h2 id="那么PID是什么控制原理？"><a href="#那么PID是什么控制原理？" class="headerlink" title="那么PID是什么控制原理？"></a>那么PID是什么控制原理？</h2><p>为什么叫“PID”?我们举一个例子做说明：假设你在推箱子，你需要将箱子推到距离你100米处的终点，那你应该用什么方法才能又快又准确地将箱子推到目的地？</p>
+<p>最简单好用的方法是：在距离目的地远的地方用大力气推<br>                                      在距离目的地近的地方用小力气推<br> 抛开物理公式，用直觉想想看，要想快准狠的到达目的地，最理想的方式是不是推力和距离成比例？在距离远的时候因为推力大所以速度快，可以节省时间；在距离近的时候减小推力，防止速度太快冲过了头。随着距离越来越近，推力越来越小。</p>
+<p> <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/16.JPG" alt=""></p>
+<p><strong>这个距离和推力成比例的思想就是PID控制理论中三大核心内容之一——比例控制，英文单词是Proportion，简写成P</strong>。</p>
+<p>由于箱子和地面有摩擦力，在距离100米处给的推力大可以轻松推动箱子，但在距离5米地方可能因为推力小推不动箱子了。这时由于距离较短，依据比例控制得到的推力一直不足以推动箱子，所以箱子就会一直处在距离目的地5米的地方不动。这种和设定量一直存在静态误差的现象也称为静差，我们要想办法消除静差。</p>
+<p><strong>小贴士:</strong>通常电子控制系统都是每隔一段时间查看当前状态和设定量是否还有偏差，如果有则继续制动以消除偏差，我们可以利用这一特性消除静差。</p>
+<p>回到推箱子事件中，假设我们每秒观测一次当前位置和目的地的距离，我们将每次的距离值累加起来。上一秒距离5米，这一秒还是距离5米，则累加值就会是10米，下一秒距离如果还是5米，则累加值就是15米。将累加值乘以一个系数添加到推力中，则随着时间的延长，终有一刻会再次推动箱子。最终实现哪怕有一丁点的静差，都会被累加值消除掉，使得控制对象精准等于设定量。</p>
+<p>** 这个累加消除静差的思想就是PID控制理论中三大核心内容之一——积分控制，积分就是累加这个动作的美称，积分英文单词是Integration，简写成I**。此外，由于距离和推力的比例设定过强或者箱子和地面的摩擦力太小，有可能造成箱子被推过头，然后再推回来，往往复复好几次才停下来的结果。我们希望箱子能尽快推到正确位置，所以必须减少这种震荡调节的次数。为了让箱子在即将到达目的地的时候能及时减速停下来，我们必须关注箱子的距离的变化率，或者说是速度。我们将箱子的距离的变化率也乘以一个系数作为阻力，将这个阻力叠加到推力上，如果上一时刻的距离和这一时刻的距离相差太大，即箱子推动速度太快了，推力就会因为阻力大而变小一点；如果上一时刻的距离和这一时刻的距离相差不太大，推力就会因为阻力小而基本不受影响。这样就可以避免快到终点时因为用力过猛而推过头。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
         
-            <div class="waterfall" id="encrypt-blog">
-                <a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/2.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/2.jpg"       alt=风景/2.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/3.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/3.jpg"       alt=风景/3.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/4.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/4.jpg"       alt=风景/4.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/5.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/5.jpg"       alt=风景/5.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/6.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/6.jpg"       alt=风景/6.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/7.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/7.jpg"       alt=风景/7.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/8.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/8.jpg"       alt=风景/8.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/9.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/9.jpg"       alt=风景/9.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/10.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/10.jpg"       alt=风景/10.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/11.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/11.jpg"       alt=风景/11.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/12.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/12.jpg"       alt=风景/12.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/13.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/13.jpg"       alt=风景/13.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/14.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/14.jpg"       alt=风景/14.jpg>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/15.JPG" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/15.JPG"       alt=风景/15.JPG>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/16.JPG" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/16.JPG"       alt=风景/16.JPG>
-    </a><a href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/17.jpg" target="_blank"     class="photo-item" rel="example_group noopener"     data-fancybox="images">      <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/17.jpg"       alt=风景/17.jpg>
-    </a>
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Gavin-Pierce.github.io" rel="external nofollow noreferrer">Gavin Pierce</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Gavin-Pierce.github.io/posts/c659.html">http://Gavin-Pierce.github.io/posts/c659.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://Gavin-Pierce.github.io" target="_blank">Gavin Pierce</a>
+                    !
+                </span>
             </div>
         
     </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
 </div>
 
-<script src="/libs/fancybox/fancybox.js"></script>
-<script src="/libs/justifiedGallery/justifiedGallery.min.js"></script>
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-
-  $("a[rel=example_group]").fancybox();
-  $("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
-
+    $(function () {
+        $('.tabs').tabs();
+    });
 </script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80ODg2NC8yNTM1OA==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/3eeb.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Dream">
+                        
+                        <span class="card-title">Dream</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Gavin Pierce
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/c659.html">
+                    <div class="card-image">
+                        
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/风景/10.jpg" class="responsive-img" alt="PID控制算法详解">
+                        
+                        <span class="card-title">PID控制算法详解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            PID是什么？PID控制是一种自动控制方式，它可以使得被控对象按照设定量运行。常见的PID控制例子有无人机自平稳，平衡车自平衡，空调控制房间温度恒定等。
+那么PID是什么控制原理？为什么叫“PID”?我们举一个例子做说明：假设你在推箱子，你
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Gavin Pierce
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('60')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Gavin<br />'
+            + '文章作者: Gavin Pierce<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
 
     <footer class="page-footer bg-color">
     
