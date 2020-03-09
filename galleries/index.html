@@ -525,11 +525,13 @@
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/banner/' + new Date().getHours() + '.jpg)');
-</script>
 
+    <script>
+        // 每天切换 banner 图.  Switch banner image every day.
+        $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/banner/' + new Date().getDay() +
+            '.jpg)');
+    </script>
+    
 
     </div>
 </div>
@@ -554,6 +556,7 @@
         </div>
         
     </div>
+    
 </main>
 
     <footer class="page-footer bg-color">
@@ -593,7 +596,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.2k</span>&nbsp;字
+                class="white-color">1.3k</span>&nbsp;字
             
             
             

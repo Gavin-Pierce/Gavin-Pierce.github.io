@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gavin-pierce.github.io/"/>
-  <updated>2020-03-09T07:11:43.724Z</updated>
+  <updated>2020-03-09T09:40:07.971Z</updated>
   <id>http://gavin-pierce.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PD</title>
+    <link href="http://gavin-pierce.github.io/posts/333c.html"/>
+    <id>http://gavin-pierce.github.io/posts/333c.html</id>
+    <published>2020-03-09T09:16:29.000Z</published>
+    <updated>2020-03-09T09:40:07.971Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Typora" scheme="http://Gavin-Pierce.github.io/categories/Typora/"/>
+    
+    
+      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
+    
+      <category term="hexo" scheme="http://Gavin-Pierce.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Dream</title>
@@ -44,7 +77,7 @@
     <link href="http://gavin-pierce.github.io/posts/c659.html"/>
     <id>http://gavin-pierce.github.io/posts/c659.html</id>
     <published>2020-02-20T12:20:20.000Z</published>
-    <updated>2020-03-09T09:01:06.895Z</updated>
+    <updated>2020-03-09T09:15:10.292Z</updated>
     
     <summary type="html">
     
