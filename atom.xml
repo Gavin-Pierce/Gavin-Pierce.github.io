@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gavin-pierce.github.io/"/>
-  <updated>2020-03-09T09:40:07.971Z</updated>
+  <updated>2020-03-09T11:25:39.012Z</updated>
   <id>http://gavin-pierce.github.io/</id>
   
   <author>
@@ -17,44 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>PD</title>
-    <link href="http://gavin-pierce.github.io/posts/333c.html"/>
-    <id>http://gavin-pierce.github.io/posts/333c.html</id>
-    <published>2020-03-09T09:16:29.000Z</published>
-    <updated>2020-03-09T09:40:07.971Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Typora" scheme="http://Gavin-Pierce.github.io/categories/Typora/"/>
-    
-    
-      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
-    
-      <category term="hexo" scheme="http://Gavin-Pierce.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Dream</title>
     <link href="http://gavin-pierce.github.io/posts/3eeb.html"/>
     <id>http://gavin-pierce.github.io/posts/3eeb.html</id>
-    <published>2020-02-28T08:39:57.337Z</published>
-    <updated>2020-03-09T07:11:43.724Z</updated>
+    <published>2020-02-13T16:00:00.000Z</published>
+    <updated>2020-03-09T11:25:39.012Z</updated>
     
     <summary type="html">
     
@@ -70,28 +37,9 @@
     
     
     
-  </entry>
-  
-  <entry>
-    <title>PID控制算法详解</title>
-    <link href="http://gavin-pierce.github.io/posts/c659.html"/>
-    <id>http://gavin-pierce.github.io/posts/c659.html</id>
-    <published>2020-02-20T12:20:20.000Z</published>
-    <updated>2020-03-09T09:15:10.292Z</updated>
+      <category term="梦想" scheme="http://Gavin-Pierce.github.io/tags/%E6%A2%A6%E6%83%B3/"/>
     
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;PID是什么？&quot;&gt;&lt;a href=&quot;#PID是什么？&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
+      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
     
   </entry>
   
