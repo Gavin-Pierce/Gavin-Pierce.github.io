@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="movies, HTML,github,JavaScript,c++,hexo,Vue.js等">
+    <meta name="keywords" content="怎么写文章, HTML,github,JavaScript,c++,hexo,Vue.js等">
     <meta name="description" content="专注于C/C++,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>movies | Gavin</title>
+    <title>怎么写文章 | Gavin</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/awesome/css/all.css">
@@ -506,12 +506,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">movies</h1>
+                    <h1 class="description center-align post-title">怎么写文章</h1>
                 </div>
             </div>
         </div>
@@ -626,9 +626,21 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/VS-code/">
+                                <span class="chip bg-color">VS code</span>
+                            </a>
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
+                            </a>
+                        
+                            <a href="/tags/Markdown/">
+                                <span class="chip bg-color">Markdown</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -640,7 +652,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-29
+                    2020-02-16
                 </div>
                 
 
@@ -649,14 +661,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    52
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -672,7 +684,191 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p> 有时候自己写<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>文章的时候,老是记不住<a href="https://baike.baidu.com/item/markdown?fr=aladdin" target="_blank" rel="noopener">Markdown</a>文档的语法或者怎么新建文章，还有<a href="https://hexo.io/zh-cn/docs/front-matter.html" target="_blank" rel="noopener">Front-matter </a>选项怎么去用，所以呢！我就准备自己写一篇文章去记录这些，以免每次写文章都得去百度一大堆东西,本文章不定期更新….</p>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="新建文章模板修改"><a href="#新建文章模板修改" class="headerlink" title="新建文章模板修改"></a>新建文章模板修改</h3><p> 首先为了新建文章方便，我们可以修改一下文章模板，建议将<code>/scaffolds/post.md</code>修改为如下代码：</p>
+<pre class=" language-json"><code class="language-json">title<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> title <span class="token punctuation">}</span><span class="token punctuation">}</span>
+date<span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">{</span> date <span class="token punctuation">}</span><span class="token punctuation">}</span>
+author<span class="token operator">:</span> 
+img<span class="token operator">:</span> 
+coverImg<span class="token operator">:</span> 
+top<span class="token operator">:</span> <span class="token boolean">false</span>
+cover<span class="token operator">:</span> <span class="token boolean">false</span>
+toc<span class="token operator">:</span> <span class="token boolean">true</span>
+mathjax<span class="token operator">:</span> <span class="token boolean">false</span>
+password<span class="token operator">:</span>
+summary<span class="token operator">:</span>
+tags<span class="token operator">:</span>
+categories<span class="token operator">:</span>
+---</code></pre>
+<p>这样新建文章后 一些<code>Front-matter</code>参数不用你自己补充了，修改对应信息就可以了</p>
+<h3 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h3><h4 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h4><p><code>Front-matte1r</code>选项中的所有内容均为非必填的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
+<p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/baifeng66/picgophots/images/fm1.png" alt=""></p>
+<p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/baifeng66/picgophots/images/fm2.png" alt=""></p>
+<blockquote>
+<p>注意:</p>
+<ol>
+<li>如果<code>img</code>属性不填写的话，文章特色图会根据文章标题的<code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图各有特色。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别<code>id</code>是通过 <code>date</code> 的值来作为唯一标识的。</li>
+<li>如果要对文章设置阅读验证密码的功能，不仅要在 <code>Front-matter</code> 中设置采用了 <code>SHA256</code>加密的 <code>password</code> 的值，还需要在主题的<code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a href="https://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">开源中国在线工具</a>、<a href="http://encode.chahuo.com/" target="_blank" rel="noopener">chahuo</a>、<a href="http://tool.chinaz.com/tools/hash.aspx" target="_blank" rel="noopener">站长工具</a>。</li>
+<li>您可以在文章md文件的 <code>front-matter</code> 中指定 <code>reprintPolicy</code>来给单个文章配置转载规则</li>
+</ol>
+</blockquote>
+<p>以下为文章的 Front-matter 示例。</p>
+<h3 id="最简示例"><a href="#最简示例" class="headerlink" title="最简示例"></a>最简示例</h3><pre class=" language-yml"><code class="language-yml">---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+---</code></pre>
+<h3 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h3><pre class=" language-yml"><code class="language-yml">---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+author: 赵奇
+img: /source/images/xxx.jpg
+top: true
+cover: true
+coverImg: /images/1.jpg
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: false
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+---</code></pre>
+<h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="一、参考文档"><a href="#一、参考文档" class="headerlink" title="一、参考文档"></a>一、参考文档</h4><blockquote>
+<p><a href="https://www.appinn.com/markdown/" target="_blank" rel="noopener">Markdown 中文版语法说明</a></p>
+<p><a href="https://blog.csdn.net/u014061630/article/details/81359144" target="_blank" rel="noopener">Markdown语法图文全面详解(10分钟学会)</a></p>
+<p><a href="https://blog.csdn.net/sanallen/article/details/92081911" target="_blank" rel="noopener">Markdown文档编写指南</a></p>
+<p><a href="https://sunhwee.gitee.io/posts/a927e90e.html#toc-heading-1" target="_blank" rel="noopener">Markdown Emoji表情语法速查表</a></p>
+<p><a href="https://sunhwee.gitee.io/posts/7e1e06e9.html" target="_blank" rel="noopener">Markdown 插入图片或者视频</a></p>
+</blockquote>
+<h4 id="二、基本语法"><a href="#二、基本语法" class="headerlink" title="二、基本语法"></a>二、基本语法</h4><h5 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h5><p>   注：# 后面保持空格</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># h1</span>
+<span class="token comment" spellcheck="true">## h2</span>
+<span class="token comment" spellcheck="true">### h3</span>
+<span class="token comment" spellcheck="true">#### h4</span>
+<span class="token comment" spellcheck="true">##### h5</span>
+<span class="token comment" spellcheck="true">###### h6</span></code></pre>
+<h5 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h5><p>Markdown划分段落非常简单，就是在段落前后保留一个空行即可，例如：</p>
+<pre><code>这是第一个段落内容
+
+这是第二个段落内容</code></pre><p>效果如下：</p>
+<p>这是第一个段落内容</p>
+<p>这是第二个段落内容</p>
+<h5 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h5><p>如果我们需要对一段内容进行强调显示时，Markdown提供了一个特殊符号&gt;(&gt;和内容之前需要空一个空格)用于段落区块引用：</p>
+<pre><code>&gt;这是一段引用段落，将会被高亮显示</code></pre><p>效果如下：</p>
+<blockquote>
+<p>这是一段引用段落，将会被高亮显示</p>
+</blockquote>
+<p>Markdown支持同时强调引用多个段落，可以按照如下方式书写</p>
+<pre><code>&gt; 这是一段引用段落，将会被高亮显示
+&gt;
+&gt; 这也是一段引用段落，也会被高亮显示</code></pre><blockquote>
+<p>这是一段引用段落，将会被高亮显示</p>
+<p>这也是一段引用段落，也会被高亮显示</p>
+</blockquote>
+<h5 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h5><pre><code>[超链接显示文字](http://www.baidu.com "超链接title")
+
+</code></pre><p><a href="http://www.baidu.com" target="_blank" rel="noopener" title="超链接title">超链接显示文字</a></p>
+<p>提示：超链接title为浮动提示文字，一般情况可以不填写</p>
+<h5 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h5><pre><code>![百度logo](https://www.baidu.com/img/bd_logo1.png?where=super)</code></pre><p><img src="./1.gif" data-original="https://www.baidu.com/img/bd_logo1.png?where=super" alt="百度logo"></p>
+<blockquote>
+<p>图片和超链接的唯一区别就是在最前方添加一个感叹号</p>
+</blockquote>
+<h5 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h5><p>无序列表使用<em>、+、-标识，但是一般使用</em>来标识无序列表</p>
+<p>单级列表从最左开始(适用于无序列表)</p>
+<pre><code>* 无序列表项
+* 无序列表项
+* 无序列表项</code></pre><ul>
+<li>无序列表项</li>
+<li>无序列表项</li>
+<li>无序列表项</li>
+</ul>
+<p>Markdown支持多级列表嵌套，但是建议一般不使用超过两级列表，另外建议两级列表从缩进3个空格开始(适用于无序列表)，如下所示:</p>
+<pre><code>   * 无序列表项
+      * 第二层列表项
+      * 第二层列表项
+   * 无序列表项
+   * 无序列表项</code></pre><ul>
+<li>无序列表项<ul>
+<li>第二层列表项</li>
+<li>第二层列表项</li>
+</ul>
+</li>
+<li>无序列表项</li>
+<li>无序列表项</li>
+</ul>
+<p>有序列表</p>
+<p>有序列表使用<font color="red">数字 </font>.标识</p>
+<pre><code>1. 有序列表项1
+2. 有序列表项2
+3. 有序列表项3</code></pre><ol>
+<li>有序列表项1</li>
+<li>有序列表项2</li>
+<li>有序列表项3</li>
+</ol>
+<pre><code>   1. 有序列表项1
+      1. 有序列表项11
+      2. 有序列表项12
+   2. 有序列表项3</code></pre><ol>
+<li>有序列表项1<ol>
+<li>有序列表项11</li>
+<li>有序列表项12</li>
+</ol>
+</li>
+<li>有序列表项3</li>
+</ol>
+<h5 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h5><pre><code>***
+
+---</code></pre><h5 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h5><pre><code>*这里是文字*
+_这里是文字_
+**这里是文字**
+***这里是文字***
+~~这里是文字~~</code></pre><p><em>这里是文字</em></p>
+<p><em>这里是文字</em></p>
+<p><strong>这里是文字</strong></p>
+<p><strong><em>这里是文字</em></strong></p>
+<p><del>这里是文字</del></p>
+<h5 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h5><h6 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h6><p>使用单个反引号进行包裹行内代码，例如 <code>var x = 10</code></p>
+<h6 id="多行代码"><a href="#多行代码" class="headerlink" title="多行代码"></a>多行代码</h6><p>可以通过三个反引号将代码包裹起来，反引号单独占一行，多一行单引号后面可以需要添加编程语言，详细的编程语言见<a href="https://pygments.org/languages/" target="_blank" rel="noopener">http://pygments.org/languages/</a></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+func <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello, World"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h5 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h5><pre><code>| 表头 | 表头 | 表头 |
+| ---- | ---- | ---- |
+| 内容 | 内容 | 内容 |
+| 内容 | 内容 | 内容 |
+| 内容 | 内容 | 内容 |</code></pre><table>
+<thead>
+<tr>
+<th>表头</th>
+<th>表头</th>
+<th>表头</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>内容</td>
+<td>内容</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>内容</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>内容</td>
+<td>内容</td>
+</tr>
+</tbody></table>
+<p>如果有错的话，请给我留言，我会及时修改,谢谢合作…… </p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -724,7 +920,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/VS-code/">
+                                    <span class="chip bg-color">VS code</span>
+                                </a>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
+                                </a>
+                            
+                                <a href="/tags/Markdown/">
+                                    <span class="chip bg-color">Markdown</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -915,27 +1123,25 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/movies/index.html">
+                <a href="/posts/1513.html">
                     <div class="card-image">
                         
                         
-                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="movies">
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="怎么写文章">
                         
-                        <span class="card-title">movies</span>
+                        <span class="card-title">怎么写文章</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            引言 有时候自己写Hexo文章的时候,老是记不住Markdown文档的语法或者怎么新建文章，还有Front-matter 选项怎么去用，所以呢！我就准备自己写一篇文章去记录这些，以免每次写文章都得去百度一大堆东西,本文章不定期更新….
+小技
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
                             </span>
                         <span class="publish-author">
                             
@@ -947,36 +1153,49 @@
                 </div>
 
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VS-code/">
+                        <span class="chip bg-color">VS code</span>
+                    </a>
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/movies/index.html">
+                <a href="/posts/3eeb.html">
                     <div class="card-image">
                         
                         
-                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="movies">
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Dream">
                         
-                        <span class="card-title">movies</span>
+                        <span class="card-title">Dream</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return
+                            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
                             </span>
                         <span class="publish-author">
                             
@@ -986,7 +1205,18 @@
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A2%A6%E6%83%B3/">
+                        <span class="chip bg-color">梦想</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
