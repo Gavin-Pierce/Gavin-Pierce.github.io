@@ -68,11 +68,11 @@
     
     
     
+      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
+    
       <category term="TCP握手协议" scheme="http://Gavin-Pierce.github.io/tags/TCP%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE/"/>
     
       <category term="客户端/服务器" scheme="http://Gavin-Pierce.github.io/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
     
   </entry>
   
@@ -141,7 +141,7 @@
     <link href="http://gavin-pierce.github.io/posts/1513.html"/>
     <id>http://gavin-pierce.github.io/posts/1513.html</id>
     <published>2020-02-15T16:00:00.000Z</published>
-    <updated>2020-03-14T12:24:58.185Z</updated>
+    <updated>2020-03-14T14:15:56.311Z</updated>
     
     <summary type="html">
     
@@ -186,9 +186,9 @@
     
     
     
-      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
-    
       <category term="梦想" scheme="http://Gavin-Pierce.github.io/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
     
   </entry>
   
