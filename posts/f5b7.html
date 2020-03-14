@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Dream, HTML,github,JavaScript,c++,hexo,Vue.js等">
+    <meta name="keywords" content="TCP传输协议, HTML,github,JavaScript,c++,hexo,Vue.js等">
     <meta name="description" content="专注于C/C++,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Dream | Gavin</title>
+    <title>TCP传输协议 | Gavin</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/awesome/css/all.css">
@@ -506,12 +506,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Dream</h1>
+                    <h1 class="description center-align post-title">TCP传输协议</h1>
                 </div>
             </div>
         </div>
@@ -628,12 +628,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
+                            <a href="/tags/TCP%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE/">
+                                <span class="chip bg-color">TCP握手协议</span>
                             </a>
                         
-                            <a href="/tags/%E6%A2%A6%E6%83%B3/">
-                                <span class="chip bg-color">梦想</span>
+                            <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">客户端/服务器</span>
+                            </a>
+                        
+                            <a href="/tags/Typora/">
+                                <span class="chip bg-color">Typora</span>
                             </a>
                         
                     </div>
@@ -648,7 +652,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-14
+                    2020-02-25
                 </div>
                 
 
@@ -657,14 +661,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    179
+                    586
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -680,7 +684,30 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐</p>
+                <h2 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h2><p>我们知道tcp建立连接要进行“三次握手”，即交换三个分组。大致流程如下：</p>
+<ul>
+<li>客户端向服务器发送一个SYN J</li>
+<li>服务器向客户端响应一个SYN K，并对SYN J进行确认ACK J+1</li>
+<li>客户端再向服务器发一个确认ACK K+1</li>
+</ul>
+<p>这就完了三次握手，但是这三次握手发生在socket的那几个函数中呢？请看下图：</p>
+<p><img src="./1.gif" data-original="https://tva4.sinaimg.cn/large/005JD0Ejgy1gctbsm9xt8j30c406ddfy.jpg" alt="socket中发送的TCP三次握手"></p>
+<p><strong>socket中发送的TCP三次握手</strong></p>
+<p>从图中可以看出，当客户端调用connect时，触发了连接请求，向服务器发送了SYN J包，这时connect进入阻塞状态；服务器监听到连接请求，即收到SYN J包，调用accept函数接收请求并向客户端发送SYN K ，ACK J+1，这时accept进入阻塞状态；客户端收到服务器的SYN K ，ACK J+1之后，这时connect返回，并对SYN K进行确认；服务器收到ACK K+1时，accept返回，至此三次握手完毕，连接建立。</p>
+<blockquote>
+<p>总结：客户端的connect在三次握手的第二个次返回，而服务器端的accept在三次握手的第三次返回。</p>
+</blockquote>
+<h2 id="TCP四次挥手"><a href="#TCP四次挥手" class="headerlink" title="TCP四次挥手"></a>TCP四次挥手</h2><p>上面介绍了socket中TCP的三次握手建立过程，及其涉及的socket函数。现在我们介绍socket中的四次握手释放连接的过程，请看下图：</p>
+<p><img src="./1.gif" data-original="https://tva4.sinaimg.cn/large/005JD0Ejgy1gctbtt46saj30a606d74c.jpg" alt="socket中发送的TCP四次握手"></p>
+<p><strong>socket中发送的TCP四次握手</strong></p>
+<p>图示过程如下：</p>
+<ul>
+<li>某个应用进程首先调用close主动关闭连接，这时TCP发送一个FIN M；</li>
+<li>另一端接收到FIN M之后，执行被动关闭，对这个FIN进行确认。它的接收也作为文件结束符传递给应用进程，因为FIN的接收意味着应用进程在相应的连接上再也接收不到额外数据；</li>
+<li>一段时间之后，接收到文件结束符的应用进程调用close关闭它的socket。这导致它的TCP也发送一个FIN N；</li>
+<li>接收到这个FIN的源发送端TCP对它进行确认。</li>
+</ul>
+<p>这样每个方向上都有一个FIN和ACK。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -734,12 +761,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
+                                <a href="/tags/TCP%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE/">
+                                    <span class="chip bg-color">TCP握手协议</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A2%A6%E6%83%B3/">
-                                    <span class="chip bg-color">梦想</span>
+                                <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">客户端/服务器</span>
+                                </a>
+                            
+                                <a href="/tags/Typora/">
+                                    <span class="chip bg-color">Typora</span>
                                 </a>
                             
                         </div>
@@ -931,25 +962,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1513.html">
+                <a href="/posts/c76d.html">
                     <div class="card-image">
                         
                         
-                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="怎么写文章">
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="C++为什么要引入auto">
                         
-                        <span class="card-title">怎么写文章</span>
+                        <span class="card-title">C++为什么要引入auto</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            引言 有时候自己写Hexo文章的时候,老是记不住Markdown文档的语法或者怎么新建文章，还有Front-matter 选项怎么去用，所以呢！我就准备自己写一篇文章去记录这些，以免每次写文章都得去百度一大堆东西,本文章不定期更新….
-小技
+                            1. 为什么要引入auto？通常，在把表达式的值赋给变量时，我们需要在声明变量时准确地声明是什么类型。但是，有时候很难知道表达式到底是什么类型的，因此引入了auto类型说明符。auto会让编译器通过初始值来推算变量的类型。
+2. 使用aut
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-29
                         </span>
                         <span class="publish-author">
                             
@@ -966,12 +997,16 @@
                         <span class="chip bg-color">Typora</span>
                     </a>
                     
-                    <a href="/tags/VS-code/">
-                        <span class="chip bg-color">VS code</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
+                    <a href="/tags/auto/">
+                        <span class="chip bg-color">auto</span>
+                    </a>
+                    
+                    <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%A7%84%E5%88%99/">
+                        <span class="chip bg-color">C++语言规则</span>
                     </a>
                     
                 </div>
@@ -982,27 +1017,27 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/3eeb.html">
+                <a href="/posts/16d9.html">
                     <div class="card-image">
                         
                         
-                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Dream">
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="Socket函数">
                         
-                        <span class="card-title">Dream</span>
+                        <span class="card-title">Socket函数</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗
+                            socket函数socket函数对应于普通文件的打开操作。普通文件的打开操作返回一个文件描述字，而socket()用于创建一个socket描述符（socket descriptor），它唯一标识一个socket。这个socket描述字跟文件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
                             </span>
                         <span class="publish-author">
                             
@@ -1012,7 +1047,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1020,8 +1054,12 @@
                         <span class="chip bg-color">Typora</span>
                     </a>
                     
-                    <a href="/tags/%E6%A2%A6%E6%83%B3/">
-                        <span class="chip bg-color">梦想</span>
+                    <a href="/tags/socket%E5%87%BD%E6%95%B0/">
+                        <span class="chip bg-color">socket函数</span>
+                    </a>
+                    
+                    <a href="/tags/TCP%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">TCP客户端/服务器</span>
                     </a>
                     
                 </div>

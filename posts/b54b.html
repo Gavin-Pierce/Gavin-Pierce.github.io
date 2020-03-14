@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Dream, HTML,github,JavaScript,c++,hexo,Vue.js等">
+    <meta name="keywords" content="Linux基本操作, HTML,github,JavaScript,c++,hexo,Vue.js等">
     <meta name="description" content="专注于C/C++,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Dream | Gavin</title>
+    <title>Linux基本操作 | Gavin</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/awesome/css/all.css">
@@ -506,12 +506,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Dream</h1>
+                    <h1 class="description center-align post-title">Linux基本操作</h1>
                 </div>
             </div>
         </div>
@@ -632,8 +632,16 @@
                                 <span class="chip bg-color">Typora</span>
                             </a>
                         
-                            <a href="/tags/%E6%A2%A6%E6%83%B3/">
-                                <span class="chip bg-color">梦想</span>
+                            <a href="/tags/auto/">
+                                <span class="chip bg-color">auto</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81/">
+                                <span class="chip bg-color">开源代码</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">开发工具</span>
                             </a>
                         
                     </div>
@@ -648,7 +656,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-14
+                    2020-02-18
                 </div>
                 
 
@@ -657,14 +665,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    179
+                    3.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    13 分
                 </div>
                 
 
@@ -680,7 +688,226 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐</p>
+                <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>​     Linux 具有<a href="https://baike.baidu.com/item/开放源码/7176422" target="_blank" rel="noopener">开放源码</a>、没有版权、技术社区用户多等特点 ，开放源码使得用户可以自由裁剪，灵活性高，功能强大，成本低。这些特点使得Linux成为开发路由交换设备的理想开发平台。</p>
+<h3 id="1-tar打包"><a href="#1-tar打包" class="headerlink" title="1. tar打包"></a>1. tar打包</h3><p>Linux tar命令用于备份文件。tar是用来建立，还原备份文件的工具程序，它可以加入，解开备份文件内的文件。</p>
+<p>语法如下：</p>
+<blockquote>
+<p>linux</p>
+<pre class=" language-linux"><code class="language-linux">tar [-ABcdgGhiklmMoOpPrRsStuUvwWxzZ][-b <区块数目>][-C <目的目录>][-f <备份文件>][-F ][-K <文件>][-L <媒体容量>][-N <日期时间>][-T <范本文件>][-V <卷册名称>][-X <范本文件>][-<设备编号><存储密度>][--after-date=<日期时间>][--atime-preserve][--backuup=<备份方式>][--checkpoint][--concatenate][--confirmation][--delete][--exclude=<范本样式>][--force-local][--group=<群组名称>][--help][--ignore-failed-read][--new-volume-script=][--newer-mtime][--no-recursion][--null][--numeric-owner][--owner=<用户名称>][--posix][--erve][--preserve-order][--preserve-permissions][--record-size=<区块数目>][--recursive-unlink][--remove-files][--rsh-command=<执行指令>][--same-owner][--suffix=<备份字尾字符串>][--totals][--use-compress-program=<执行指令>][--version][--volno-file=<编号文件>][文件或目录...]</code></pre>
+</blockquote>
+<p>参数：</p>
+<ul>
+<li>-A或–catenate 新增文件到已存在的备份文件。</li>
+<li>-b&lt;区块数目&gt;或–blocking-factor=&lt;区块数目&gt; 设置每笔记录的区块数目，每个区块大小为12Bytes。</li>
+<li>-B或–read-full-records 读取数据时重设区块大小。</li>
+<li>-c或–create 建立新的备份文件。</li>
+<li>-C&lt;目的目录&gt;或–directory=&lt;目的目录&gt; 切换到指定的目录。</li>
+<li>-d或–diff或–compare 对比备份文件内和文件系统上的文件的差异。</li>
+<li>-f&lt;备份文件&gt;或–file=&lt;备份文件&gt; 指定备份文件。</li>
+<li>-F&lt;Script文件&gt;或–info-script=&lt;Script文件&gt; 每次更换磁带时，就执行指定的Script文件。</li>
+<li>-g或–listed-incremental 处理GNU格式的大量备份。</li>
+<li>-G或–incremental 处理旧的GNU格式的大量备份。</li>
+<li>-h或–dereference 不建立符号连接，直接复制该连接所指向的原始文件。</li>
+<li>-i或–ignore-zeros 忽略备份文件中的0 Byte区块，也就是EOF。</li>
+<li>-k或–keep-old-files 解开备份文件时，不覆盖已有的文件。</li>
+<li>-K&lt;文件&gt;或–starting-file=&lt;文件&gt; 从指定的文件开始还原。</li>
+<li>-l或–one-file-system 复制的文件或目录存放的文件系统，必须与tar指令执行时所处的文件系统相同，否则不予复制。</li>
+<li>-L&lt;媒体容量&gt;或-tape-length=&lt;媒体容量&gt; 设置存放每体的容量，单位以1024 Bytes计算。</li>
+<li>-m或–modification-time 还原文件时，不变更文件的更改时间。</li>
+<li>-M或–multi-volume 在建立，还原备份文件或列出其中的内容时，采用多卷册模式。</li>
+<li>-N&lt;日期格式&gt;或–newer=&lt;日期时间&gt; 只将较指定日期更新的文件保存到备份文件里。</li>
+<li>-o或–old-archive或–portability 将资料写入备份文件时使用V7格式。</li>
+<li>-O或–stdout 把从备份文件里还原的文件输出到标准输出设备。</li>
+<li>-p或–same-permissions 用原来的文件权限还原文件。</li>
+<li>-P或–absolute-names 文件名使用绝对名称，不移除文件名称前的”/“号。</li>
+<li>-r或–append 新增文件到已存在的备份文件的结尾部分。</li>
+<li>-R或–block-number 列出每个信息在备份文件中的区块编号。</li>
+<li>-s或–same-order 还原文件的顺序和备份文件内的存放顺序相同。</li>
+<li>-S或–sparse 倘若一个文件内含大量的连续0字节，则将此文件存成稀疏文件。</li>
+<li>-t或–list 列出备份文件的内容。</li>
+<li>-T&lt;范本文件&gt;或–files-from=&lt;范本文件&gt; 指定范本文件，其内含有一个或多个范本样式，让tar解开或建立符合设置条件的文件。</li>
+<li>-u或–update 仅置换较备份文件内的文件更新的文件。</li>
+<li>-U或–unlink-first 解开压缩文件还原文件之前，先解除文件的连接。</li>
+<li>-v或–verbose 显示指令执行过程。</li>
+<li>-V&lt;卷册名称&gt;或–label=&lt;卷册名称&gt; 建立使用指定的卷册名称的备份文件。</li>
+<li>-w或–interactive 遭遇问题时先询问用户。</li>
+<li>-W或–verify 写入备份文件后，确认文件正确无误。</li>
+<li>-x或–extract或–get 从备份文件中还原文件。</li>
+<li>-X&lt;范本文件&gt;或–exclude-from=&lt;范本文件&gt; 指定范本文件，其内含有一个或多个范本样式，让ar排除符合设置条件的文件。</li>
+<li>-z或–gzip或–ungzip 通过gzip指令处理备份文件。</li>
+<li>-Z或–compress或–uncompress 通过compress指令处理备份文件。</li>
+<li>-&lt;设备编号&gt;&lt;存储密度&gt; 设置备份用的外围设备编号及存放数据的密度。</li>
+<li>–after-date=&lt;日期时间&gt; 此参数的效果和指定”-N”参数相同。</li>
+<li>–atime-preserve 不变更文件的存取时间。</li>
+<li>–backup=&lt;备份方式&gt;或–backup 移除文件前先进行备份。</li>
+<li>–checkpoint 读取备份文件时列出目录名称。</li>
+<li>–concatenate 此参数的效果和指定”-A”参数相同。</li>
+<li>–confirmation 此参数的效果和指定”-w”参数相同。</li>
+<li>–delete 从备份文件中删除指定的文件。</li>
+<li>–exclude=&lt;范本样式&gt; 排除符合范本样式的文件。</li>
+<li>–group=&lt;群组名称&gt; 把加入设备文件中的文件的所属群组设成指定的群组。</li>
+<li>–help 在线帮助。</li>
+<li>–ignore-failed-read 忽略数据读取错误，不中断程序的执行。</li>
+<li>–new-volume-script=&lt;Script文件&gt; 此参数的效果和指定”-F”参数相同。</li>
+<li>–newer-mtime 只保存更改过的文件。</li>
+<li>–no-recursion 不做递归处理，也就是指定目录下的所有文件及子目录不予处理。</li>
+<li>–null 从null设备读取文件名称。</li>
+<li>–numeric-owner 以用户识别码及群组识别码取代用户名称和群组名称。</li>
+<li>–owner=&lt;用户名称&gt; 把加入备份文件中的文件的拥有者设成指定的用户。</li>
+<li>–posix 将数据写入备份文件时使用POSIX格式。</li>
+<li>–preserve 此参数的效果和指定”-ps”参数相同。</li>
+<li>–preserve-order 此参数的效果和指定”-A”参数相同。</li>
+<li>–preserve-permissions 此参数的效果和指定”-p”参数相同。</li>
+<li>–record-size=&lt;区块数目&gt; 此参数的效果和指定”-b”参数相同。</li>
+<li>–recursive-unlink 解开压缩文件还原目录之前，先解除整个目录下所有文件的连接。</li>
+<li>–remove-files 文件加入备份文件后，就将其删除。</li>
+<li>–rsh-command=&lt;执行指令&gt; 设置要在远端主机上执行的指令，以取代rsh指令。</li>
+<li>–same-owner 尝试以相同的文件拥有者还原文件。</li>
+<li>–suffix=&lt;备份字尾字符串&gt; 移除文件前先行备份。</li>
+<li>–totals 备份文件建立后，列出文件大小。</li>
+<li>–use-compress-program=&lt;执行指令&gt; 通过指定的指令处理备份文件。</li>
+<li>–version 显示版本信息。</li>
+<li>–volno-file=&lt;编号文件&gt; 使用指定文件内的编号取代预设的卷册编号。</li>
+</ul>
+<p>常用案例：</p>
+<blockquote>
+<p>linux</p>
+<pre class=" language-linux"><code class="language-linux">tar -czvf test.tar.gz a.c   //压缩a.c文件为test.tar.gz
+tar -tzvf test.tar.gz       //列出压缩文件内容
+tar -xzvf test.tar.gz       //解压文件</code></pre>
+</blockquote>
+<h3 id="2-find查找"><a href="#2-find查找" class="headerlink" title="2. find查找"></a>2. find查找</h3><p>Linux find命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。</p>
+<p>语法：</p>
+<blockquote>
+<p>linux</p>
+<pre class=" language-linux"><code class="language-linux">find   path   -option   [   -print ]   [ -exec   -ok   command ]   {} \;</code></pre>
+</blockquote>
+<p>参数说明：</p>
+<blockquote>
+<p>find 根据下列规则判断 path 和 expression，在命令列上第一个 - ( ) , ! 之前的部份为 path，之后的是 expression。如果 path 是空字串则使用目前路径，如果 expression 是空字串则使用 -print 为预设 expression。</p>
+<p>expression 中可使用的选项有二三十个之多，在此只介绍最常用的部份。</p>
+<p>-mount, -xdev : 只检查和指定目录在同一个文件系统下的文件，避免列出其它文件系统中的文件</p>
+<p>-amin n : 在过去 n 分钟内被读取过</p>
+<p>-anewer file : 比文件 file 更晚被读取过的文件</p>
+<p>-atime n : 在过去n天内被读取过的文件</p>
+<p>-cmin n : 在过去 n 分钟内被修改过</p>
+<p>-cnewer file :比文件 file 更新的文件</p>
+<p>-ctime n : 在过去n天内被修改过的文件</p>
+<p>-empty : 空的文件-gid n or -group name : gid 是 n 或是 group 名称是 name</p>
+<p>-ipath p, -path p : 路径名称符合 p 的文件，ipath 会忽略大小写</p>
+<p>-name name, -iname name : 文件名称符合 name 的文件。iname 会忽略大小写</p>
+<p>-size n : 文件大小 是 n 单位，b 代表 512 位元组的区块，c 表示字元数，k 表示 kilo bytes，w 是二个位元组。-type c : 文件类型是 c 的文件。</p>
+<p>d: 目录</p>
+<p>c: 字型装置文件</p>
+<p>b: 区块装置文件</p>
+<p>p: 具名贮列</p>
+<p>f: 一般文件</p>
+<p>l: 符号连结</p>
+<p>s: socket</p>
+<p>-pid n : process id 是 n 的文件</p>
+<p>你可以使用 ( ) 将运算式分隔，并使用下列运算。</p>
+<p>exp1 -and exp2</p>
+<p>! expr</p>
+<p>-not expr</p>
+<p>exp1 -or exp2</p>
+<p>exp1, exp2</p>
+</blockquote>
+<p>常用命令案例：</p>
+<blockquote>
+<p>linux</p>
+<pre class=" language-linux"><code class="language-linux">//将当前目录及其子目录下所有延伸档名是 c 的文件列出来
+find . -name "*.c"
+//将当前目录其其下子目录中所有一般文件列出
+find . -type f
+//将当前目录及其子目录下所有最近 20 天内更新过的文件列出
+find . -ctime -20
+//查找/var/log目录中更改时间在7日以前的普通文件，并在删除之前询问它们
+find /var/log -type f -mtime +7 -ok rm {} \;
+//查找前目录中文件属主具有读、写权限，并且文件所属组的用户和其他用户具有读权限的文件
+find . -type f -perm 644 -exec ls -l {} \;
+//为了查找系统中所有文件长度为0的普通文件，并列出它们的完整路径
+find / -type f -size 0 -exec ls -l {} \;</code></pre>
+</blockquote>
+<p>#####3. sz下载，rz上传</p>
+<p>rz，sz是<code>Linux/Unix</code>同<code>Windows</code>进行<code>ZModem</code>文件传输的命令行工具。<br>优点就是不用再开一个sftp工具登录上去上传下载文件。</p>
+<p>sz：将选定的文件发送（send）到本地机器<br>rz：运行该命令会弹出一个文件选择窗口，从本地选择文件上传到Linux服务器</p>
+<p>安装命令：</p>
+<blockquote>
+<p>yum install lrzsz</p>
+</blockquote>
+<p>从服务端发送文件到客户端：</p>
+<blockquote>
+<p>sz filename</p>
+</blockquote>
+<p>从客户端上传文件到服务端：</p>
+<p>rz</p>
+<p>在弹出的框中选择文件，上传文件的用户和组是当前登录的用户</p>
+<p><code>SecureCRT</code>设置默认路径：</p>
+<p>Options -&gt; Session Options -&gt; Terminal -&gt; Xmodem/Zmodem -&gt;Directories</p>
+<p><code>Xshell</code>设置默认路径：</p>
+<p>右键会话 -&gt; 属性 -&gt; ZMODEM -&gt; 接收文件夹</p>
+<h3 id="3-mv命令"><a href="#3-mv命令" class="headerlink" title="3. mv命令"></a>3. mv命令</h3><p>mv 命令用来为文件或目录改名、或将文件或目录移入其它位置。</p>
+<p>语法：</p>
+<blockquote>
+<p>linux</p>
+<pre class=" language-linux"><code class="language-linux">mv [options] source dest
+mv [options] source... directory</code></pre>
+</blockquote>
+<p>参数说明：</p>
+<ul>
+<li>-i: 若指定目录已有同名文件，则先询问是否覆盖旧文件;</li>
+<li>-f: 在 mv 操作要覆盖某已有的目标文件时不给任何指示;</li>
+</ul>
+<p>参数设置和运行结果：</p>
+<table>
+<thead>
+<tr>
+<th align="left">命令格式</th>
+<th align="left">运行结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">mv 文件名 文件名</td>
+<td align="left">将源文件名改为目标文件名</td>
+</tr>
+<tr>
+<td align="left">mv 文件名 目录名</td>
+<td align="left">将文件移动到目标目录</td>
+</tr>
+<tr>
+<td align="left">mv 目录名 目录名</td>
+<td align="left">目标目录已存在，将源目录移动到目标目录；目标目录不存在则改名</td>
+</tr>
+<tr>
+<td align="left">mv 目录名 文件名</td>
+<td align="left">出错</td>
+</tr>
+</tbody></table>
+<p>命令案例：</p>
+<blockquote>
+<p>mv a b //将文件a更名为b</p>
+<p>mv info/ logs //将info目录放入logs目录中。注意，如果logs目录不存在，则该命令将info改名为logs。</p>
+<p>mv /home/img/* . //将/home/img下的所有文件和目录移到当前目录下</p>
+</blockquote>
+<p>注意：</p>
+<blockquote>
+<p>mv /home/a.txt /home/b.txt //目标目录与原目录一致，指定了新文件名，效果就是仅仅重命名。</p>
+<p>//目标目录与原目录不一致，没有指定新文件名，效果就是仅仅移动。</p>
+<p>mv /home/a.txt /home/test/ 或者 mv /home/a.txt /home/test</p>
+<p>mv /home/a.txt /home/test/b.txt //目标目录与原目录一致, 指定了新文件名，效果就是：移动 + 重命名。</p>
+</blockquote>
+<h3 id="4-Linux开发工具"><a href="#4-Linux开发工具" class="headerlink" title="4. Linux开发工具"></a>4. Linux开发工具</h3><p>Linux已经成为工作、娱乐和个人生活等多个领域的支柱，人们已经越来越离不开它。在Linux的帮助下，技术的变革速度超出了人们的想象，Linux开发的速度也以指数规模增长。因此，越来越多的开发者也不断地加入开源和学习Linux开发地潮流当中。在这个过程之中，合适的工具是必不可少的，可喜的是，随着Linux的发展，大量适用于Linux的开发工具也不断成熟。</p>
+<p>容器</p>
+<p> 放眼现实，现在已经是容器的时代了。容器既极其容易部署，又可以方便地构建开发环境。如果针对的是特定的平台的开发，将开发流程所需要的各种工具都创建到容器映像中是一种很好的方法，只要使用这一个容器映像，就能够快速启动大量运行所需服务的实例。</p>
+<p>版本控制工具</p>
+<p>如果正在开发一个大型项目，又或者参与团队开发，版本控制工具是必不可少的，它可以用于记录代码变更、提交代码以及合并代码。如果没有这样的工具，项目几乎无法妥善管理。</p>
+<p>文本编辑器</p>
+<p>如果没有文本编辑器，在Linux上开发将会变得异常艰难。当然，文本编辑器之间孰优孰劣，具体还是要取决于开发者的需求。</p>
+<p>集成开发环境</p>
+<p>集成开发环境(Integrated Developmemt Envimnment，<a href="https://baike.baidu.com/item/IDE/8232086" target="_blank" rel="noopener">IDE</a>) 是包含一整套全面的工具、可以实现一站式功能的开发环境。</p>
+<p>文本比较工具</p>
+<p>有时候会需要比较两个文件的内容来找到它们之间的不同之处，它们可能是同一文件的两个不同副本(例如有一个经过编译，而另一个没有)。这种情况下，肯定不想要凭借肉眼来找出差异，而是想要使用像<a href="https://baike.baidu.com/item/Med/8237994" target="_blank" rel="noopener">Med</a>这样的工具。 </p>
+<p>如果有错的话，请给我留言，我会及时更新,谢谢合作……</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -738,8 +965,16 @@
                                     <span class="chip bg-color">Typora</span>
                                 </a>
                             
-                                <a href="/tags/%E6%A2%A6%E6%83%B3/">
-                                    <span class="chip bg-color">梦想</span>
+                                <a href="/tags/auto/">
+                                    <span class="chip bg-color">auto</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81/">
+                                    <span class="chip bg-color">开源代码</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">开发工具</span>
                                 </a>
                             
                         </div>
@@ -931,6 +1166,59 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/posts/16d9.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="Socket函数">
+                        
+                        <span class="card-title">Socket函数</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            socket函数socket函数对应于普通文件的打开操作。普通文件的打开操作返回一个文件描述字，而socket()用于创建一个socket描述符（socket descriptor），它唯一标识一个socket。这个socket描述字跟文件
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Gavin Pierce
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/socket%E5%87%BD%E6%95%B0/">
+                        <span class="chip bg-color">socket函数</span>
+                    </a>
+                    
+                    <a href="/tags/TCP%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">TCP客户端/服务器</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/posts/1513.html">
                     <div class="card-image">
                         
@@ -948,9 +1236,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -972,56 +1260,6 @@
                     
                     <a href="/tags/Markdown/">
                         <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/3eeb.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="Dream">
-                        
-                        <span class="card-title">Dream</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Gavin Pierce
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%A2%A6%E6%83%B3/">
-                        <span class="chip bg-color">梦想</span>
                     </a>
                     
                 </div>
