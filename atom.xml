@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://gavin-pierce.github.io/"/>
-  <updated>2020-03-16T07:46:19.161Z</updated>
+  <updated>2020-03-16T07:46:42.829Z</updated>
   <id>http://gavin-pierce.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://gavin-pierce.github.io/posts/58fb.html"/>
     <id>http://gavin-pierce.github.io/posts/58fb.html</id>
     <published>2020-03-07T16:00:00.000Z</published>
-    <updated>2020-03-16T07:46:19.161Z</updated>
+    <updated>2020-03-16T07:46:42.829Z</updated>
     
     <summary type="html">
     
@@ -50,7 +50,7 @@
     <link href="http://gavin-pierce.github.io/posts/abdc.html"/>
     <id>http://gavin-pierce.github.io/posts/abdc.html</id>
     <published>2020-03-04T16:00:00.000Z</published>
-    <updated>2020-03-16T07:40:10.704Z</updated>
+    <updated>2020-03-16T07:46:42.827Z</updated>
     
     <summary type="html">
     
@@ -81,7 +81,7 @@
     <link href="http://gavin-pierce.github.io/posts/68fc.html"/>
     <id>http://gavin-pierce.github.io/posts/68fc.html</id>
     <published>2020-03-02T16:00:00.000Z</published>
-    <updated>2020-03-16T07:36:34.473Z</updated>
+    <updated>2020-03-16T07:46:42.825Z</updated>
     
     <summary type="html">
     
@@ -113,7 +113,7 @@
     <link href="http://gavin-pierce.github.io/posts/fb40.html"/>
     <id>http://gavin-pierce.github.io/posts/fb40.html</id>
     <published>2020-02-29T16:00:00.000Z</published>
-    <updated>2020-03-16T07:28:40.548Z</updated>
+    <updated>2020-03-16T07:46:42.822Z</updated>
     
     <summary type="html">
     
@@ -143,7 +143,7 @@
     <link href="http://gavin-pierce.github.io/posts/27f1.html"/>
     <id>http://gavin-pierce.github.io/posts/27f1.html</id>
     <published>2020-02-27T16:00:00.000Z</published>
-    <updated>2020-03-16T07:25:42.238Z</updated>
+    <updated>2020-03-16T07:46:42.820Z</updated>
     
     <summary type="html">
     
@@ -173,7 +173,7 @@
     <link href="http://gavin-pierce.github.io/posts/de40.html"/>
     <id>http://gavin-pierce.github.io/posts/de40.html</id>
     <published>2020-02-26T16:00:00.000Z</published>
-    <updated>2020-03-16T07:17:15.861Z</updated>
+    <updated>2020-03-16T07:46:42.818Z</updated>
     
     <summary type="html">
     
@@ -285,6 +285,35 @@
       <category term="TCP握手协议" scheme="http://Gavin-Pierce.github.io/tags/TCP%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE/"/>
     
       <category term="客户端/服务器" scheme="http://Gavin-Pierce.github.io/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Socket函数</title>
+    <link href="http://gavin-pierce.github.io/posts/16d9.html"/>
+    <id>http://gavin-pierce.github.io/posts/16d9.html</id>
+    <published>2020-02-20T16:00:00.000Z</published>
+    <updated>2020-03-16T07:51:32.484Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;socket函数&quot;&gt;&lt;a href=&quot;#socket函数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Typora" scheme="http://Gavin-Pierce.github.io/tags/Typora/"/>
+    
+      <category term="socket函数" scheme="http://Gavin-Pierce.github.io/tags/socket%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="TCP客户端/服务器" scheme="http://Gavin-Pierce.github.io/tags/TCP%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
