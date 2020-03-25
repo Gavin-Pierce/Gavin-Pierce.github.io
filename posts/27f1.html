@@ -212,7 +212,7 @@ long long toTen(string str, int ne)//任意进制转化为10进制
             const strs = href.split('/');
             if (strs.length >= 3) {
                 const host = strs[2];
-                if (host !== 'www.xutguanpo.cn' || window.location.host) {
+                if (host !== 'xutguanpo.cn' || window.location.host) {
                     $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
                     if (true) {
                         $this.attr('target', '_blank');
