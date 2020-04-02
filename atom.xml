@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-03-22T02:09:24.025Z</updated>
+  <updated>2020-04-02T15:34:36.625Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TCP三次握手和四次挥手</title>
+    <link href="https://www.xutguanpo.cn/posts/942c.html"/>
+    <id>https://www.xutguanpo.cn/posts/942c.html</id>
+    <published>2020-03-19T16:00:00.000Z</published>
+    <updated>2020-04-02T15:34:36.625Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;TCP 三次握手&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;TCP 三次握手就好比两个人在街上隔着50米看见了对方，但是因为雾霾等原因不能100%确认，所以要通过招手的方式相互确定对方是否认识自己。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./1.gif&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="客户端/服务器" scheme="https://www.xutguanpo.cn/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="TCP" scheme="https://www.xutguanpo.cn/tags/TCP/"/>
+    
+  </entry>
   
   <entry>
     <title>阅读文献</title>

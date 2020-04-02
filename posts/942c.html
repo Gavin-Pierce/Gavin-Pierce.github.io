@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++总结（一）, HTML,github,JavaScript,c++,hexo,Vue.js等">
+    <meta name="keywords" content="TCP三次握手和四次挥手, HTML,github,JavaScript,c++,hexo,Vue.js等">
     <meta name="description" content="专注于C/C++,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++总结（一） | Gavin</title>
+    <title>TCP三次握手和四次挥手 | Gavin</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/awesome/css/all.css">
@@ -443,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++总结（一）</h1>
+                    <h1 class="description center-align post-title">TCP三次握手和四次挥手</h1>
                 </div>
             </div>
         </div>
@@ -565,16 +565,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                <span class="chip bg-color">客户端/服务器</span>
                             </a>
                         
-                            <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                <span class="chip bg-color">字符串</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                                <span class="chip bg-color">进制转换</span>
+                            <a href="/tags/TCP/">
+                                <span class="chip bg-color">TCP</span>
                             </a>
                         
                     </div>
@@ -589,7 +585,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-28
+                    2020-03-20
                 </div>
                 
 
@@ -598,14 +594,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.8k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    6 分
                 </div>
                 
 
@@ -621,156 +617,51 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>1.strlen 用于取字符串长度，需要头文件 cstring</strong></p>
-<pre class=" language-cpp"><code class="language-cpp">size_t <span class="token function">strlen</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>string）<span class="token punctuation">;</span>
-头文件：string<span class="token punctuation">.</span>h
-格式：strlen （字符数组名）
-功能：计算字符串s的（<span class="token keyword">unsigned</span> <span class="token keyword">int</span>型）长度，不包括<span class="token string">'\0'</span>在内
-说明：返回s的长度，不包括结束符<span class="token constant">NULL</span>。</code></pre>
-<p><strong>2.gets() 用于接受连续的输入，包括空格，TAB</strong></p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">char</span> <span class="token operator">*</span> <span class="token function">gets</span> <span class="token punctuation">(</span> <span class="token keyword">char</span> <span class="token operator">*</span> str <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p><strong>3.gets,cin.get 的读取以程序运行开始</strong></p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> a<span class="token punctuation">;</span>cin<span class="token operator">>></span>a<span class="token punctuation">;</span>
-<span class="token keyword">char</span> str<span class="token punctuation">[</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>a<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token function">gets</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//直接触发第一次 </span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span><span class="token function">strlen</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span>
-        cout<span class="token operator">&lt;&lt;</span>str<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p><strong>4. 以 EOF(End of file) 作为输入结尾</strong></p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>s<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    cout<span class="token operator">&lt;&lt;</span>s<span class="token operator">&lt;&lt;</span><span class="token string">"\n\n"</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>cin 是 C ++ 的标准输入流，其本身是一个对象，并不存在返回值的概念。<br>不过经常会有类似于</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">while</span><span class="token punctuation">(</span>cin<span class="token operator">>></span>a<span class="token punctuation">)</span></code></pre>
-<p>的调用，这里并不是 cin 的返回值，而是 &gt;&gt; 操作重载函数</p>
-<pre class=" language-cpp"><code class="language-cpp">istream<span class="token operator">&amp;</span> <span class="token keyword">operator</span><span class="token operator">>></span><span class="token punctuation">(</span>istream<span class="token operator">&amp;</span><span class="token punctuation">,</span> T <span class="token operator">&amp;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>的返回值，其中第二个参数由 cin&gt;&gt; 后续参数类型决定。<br>其返回值类型为 istream&amp; 类型，大多数情况下其返回值为 cin 本身（非 0 值），只有当遇到 EOF 输入时，返回值为 0。</p>
-<p><strong>5.string 用法总结</strong></p>
-<p>\1. 长度<br>length 成员函数返回字符串的长度。size 成员函数可以实现同样的功能。</p>
-<pre class=" language-cpp"><code class="language-cpp">string a<span class="token punctuation">;</span>
-cout<span class="token operator">&lt;&lt;</span>a<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>\2. 字符串的连接<br>除了可以使用 + 和 += 运算符对 string 对象执行字符串的连接操作外，string 类还有 append 成员函数，可以用来向字符串后面添加内容。append 成员函数返回对象自身的引用。例如：</p>
-<pre class=" language-cpp"><code class="language-cpp">string <span class="token function">s1</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">s2</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// s1 = "123abc"</span>
-s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>s2<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// s1 = "123abcbc"</span>
-s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">'K'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// s1 = "123abcbcKKK"</span>
-s1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"ABCDE"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// s1 = "123abcbcKKKCDE"，添加 "ABCDE" 的子串(2, 3)</span></code></pre>
-<p>\3. 求 string 对象的子串<br>substr 成员函数可以用于求子串 (n, m)，原型如下：</p>
-<pre class=" language-cpp"><code class="language-cpp">string <span class="token function">substr</span><span class="token punctuation">(</span><span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">int</span> m <span class="token operator">=</span> string<span class="token operator">::</span>npos<span class="token punctuation">)</span> <span class="token keyword">const</span><span class="token punctuation">;</span></code></pre>
-<p>调用时，如果省略 m 或 m 超过了字符串的长度，则求出来的子串就是从下标 n 开始一直到字符串结束的部分。例如：</p>
-<pre class=" language-cpp"><code class="language-cpp">string s1 <span class="token operator">=</span> <span class="token string">"this is ok"</span><span class="token punctuation">;</span>
-string s2 <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// s2 = "is i"</span>
-s2 <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// s2 = "is is ok"</span></code></pre>
-<p>\4. 查找子串和字符</p>
+                <p><strong>TCP 三次握手</strong></p>
+<p>TCP 三次握手就好比两个人在街上隔着50米看见了对方，但是因为雾霾等原因不能100%确认，所以要通过招手的方式相互确定对方是否认识自己。</p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-9543c68c124910cfe3090285c1f61241_b.jpg" alt="img"></p>
+<p>张三首先向李四招手(syn)，李四看到张三向自己招手后，向对方点了点头挤出了一个微笑(ack)。张三看到李四微笑后确认了李四成功辨认出了自己(进入estalished状态)。</p>
+<p>但是李四还有点狐疑，向四周看了一看，有没有可能张三是在看别人呢，他也需要确认一下。</p>
+<p>所以李四也向张三招了招手(syn)，张三看到李四向自己招手后知道对方是在寻求自己的确认，于是也点了点头挤出了微笑(ack)，李四看到对方的微笑后确认了张三就是在向自己打招呼(进入established状态)。</p>
+<p>于是两人加快步伐，走到了一起，相互拥抱</p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-d31e97fab9a8e987235a4a5554ffd43d_b.webp" alt="img"></p>
+<p>我们看到这个过程中一共是四个动作，张三招手–李四点头微笑–李四招手–张三点头微笑。</p>
+<p>其中李四连续进行了2个动作，先是点头微笑(回复对方)，然后再次招手(寻求确认)，实际上可以将这两个动作合一，招手的同时点头和微笑(syn+ack)。</p>
+<p>于是四个动作就简化成了三个动作，张三招手–李四点头微笑并招手–张三点头微笑。这就是三次握手的本质，中间的一次动作是两个动作的合并。</p>
+<p>我们看到有两个中间状态，syn_sent和syn_rcvd，这两个状态叫着「半打开」状态，就是向对方招手了，但是还没来得及看到对方的点头微笑。</p>
+<p>syn_sent是主动打开方的「半打开」状态，syn_rcvd是被动打开方的「半打开」状态。客户端是主动打开方，服务器是被动打开方。</p>
 <ul>
-<li>find：从前往后查找子串或字符出现的位置。</li>
-<li>rfind：从后往前查找子串或字符出现的位置。</li>
-<li>find_first_of：从前往后查找何处出现另一个字符串中包含的字符。例如：</li>
-<li>s1.find_first_of(“abc”); // 查找 s1 中第一次出现 “abc” 中任一字符的位置</li>
-<li>find_last_of：从后往前查找何处出现另一个字符串中包含的字符。</li>
-<li>find_first_not_of：从前往后查找何处出现另一个字符串中没有包含的字符。</li>
-<li>find_last_not_of：从后往前查找何处出现另一个字符串中没有包含的字符。</li>
+<li>syn_sent: syn package has been sent</li>
+<li>syn_rcvd: syn package has been received</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;string></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    string <span class="token function">s1</span><span class="token punctuation">(</span><span class="token string">"Source Code"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">'u'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> string<span class="token operator">::</span>npos<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//查找 u 出现的位置</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"1) "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">","</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//输出 l)2,urce Code</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"Source"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">==</span> string<span class="token operator">::</span>npos<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//从下标3开始查找"Source"，找不到</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"2) "</span> <span class="token operator">&lt;&lt;</span> <span class="token string">"Not Found"</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输出 2) Not Found</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"Co"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> string<span class="token operator">::</span>npos<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//查找子串"Co"。能找到，返回"Co"的位置</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"3) "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//输出 3) 7, Code</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">find_first_of</span><span class="token punctuation">(</span><span class="token string">"ceo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> string<span class="token operator">::</span>npos<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//查找第一次出现或 'c'、'e'或'o'的位置</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"4) "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//输出 4) l, ource Code</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">find_last_of</span><span class="token punctuation">(</span><span class="token string">'e'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> string<span class="token operator">::</span>npos<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//查找最后一个 'e' 的位置</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"5) "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输出 5) 10, e</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>n <span class="token operator">=</span> s1<span class="token punctuation">.</span><span class="token function">find_first_not_of</span><span class="token punctuation">(</span><span class="token string">"eou"</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> string<span class="token operator">::</span>npos<span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//从下标1开始查找第一次出现非 'e'、'o' 或 'u' 字符的位置</span>
-        cout <span class="token operator">&lt;&lt;</span> <span class="token string">"6) "</span> <span class="token operator">&lt;&lt;</span> n <span class="token operator">&lt;&lt;</span> <span class="token string">", "</span> <span class="token operator">&lt;&lt;</span> s1<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//输出 6) 3, rce Code</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<p>\5. 替换子串<br>replace 成员函数可以对 string 对象中的子串进行替换，返回值为对象自身的引用。例如：</p>
-<pre class=" language-cpp"><code class="language-cpp">string <span class="token function">s1</span><span class="token punctuation">(</span><span class="token string">"Real Steel"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-s1<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">"123456"</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//用 "123456" 的子串(2,4) 替换 s1 的子串(1,3)</span>
-cout <span class="token operator">&lt;&lt;</span> s1 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输出 R3456 Steel</span>
-string <span class="token function">s2</span><span class="token punctuation">(</span><span class="token string">"Harry Potter"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-s2<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//用 5 个 '0' 替换子串(2,3)</span>
-cout <span class="token operator">&lt;&lt;</span> s2 <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输出 HaOOOOO Potter</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> s2<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token string">"OOOOO"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//查找子串 "00000" 的位置，n=2</span>
-s2<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">"XXX"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//将子串(n,5)替换为"XXX"</span>
-cout <span class="token operator">&lt;&lt;</span> s2 <span class="token operator">&lt;</span> <span class="token operator">&lt;</span> endl<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//输出 HaXXX Potter</span></code></pre>
-<p>\6. 删除子串<br>erase 成员函数可以删除 string 对象中的子串，返回值为对象自身的引用。例如：</p>
-<pre class=" language-cpp"><code class="language-cpp">string <span class="token function">s1</span><span class="token punctuation">(</span><span class="token string">"Real Steel"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-s1<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//删除子串(1, 3)，此后 s1 = "R Steel"</span>
-s1<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//删除下标5及其后面的所有字符，此后 s1 = "R Ste"</span></code></pre>
-<p>\7. 插入字符串<br>insert 成员函数可以在 string 对象中插入另一个字符串，返回值为对象自身的引用。例如：</p>
-<pre class=" language-cpp"><code class="language-cpp">string <span class="token function">s1</span><span class="token punctuation">(</span><span class="token string">"Limitless"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">s2</span><span class="token punctuation">(</span><span class="token string">"00"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-s1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">"123"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//在下标 2 处插入字符串"123"，s1 = "Li123mitless"</span>
-s1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//在下标 2 处插入 s2 , s1 = "Li10023mitless"</span>
-s1<span class="token punctuation">.</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token string">'X'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//在下标 3 处插入 5 个 'X'，s1 = "Li1XXXXX0023mitless"</span></code></pre>
-<p>\8. 获取字符串元素<br>字符串中元素的访问是允许的，一般可使用两种方法访问字符串中的单一字符：下标操作符[] 和 成员函数 at()。两者均返回指定的下标位置的字符。第 1 个字符索引（下标）为 0，最后的字符索引为 length()-1。<br>\9. 将字符串转换为整数</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> stoi（<span class="token keyword">const</span> string＆str，size_t <span class="token operator">*</span> idx <span class="token operator">=</span> <span class="token number">0</span>，<span class="token keyword">int</span> base <span class="token operator">=</span> <span class="token number">10</span>）<span class="token punctuation">;</span>
-<span class="token keyword">int</span> stoi（<span class="token keyword">const</span> wstring＆str，size_t <span class="token operator">*</span> idx <span class="token operator">=</span> <span class="token number">0</span>，<span class="token keyword">int</span> base <span class="token operator">=</span> <span class="token number">10</span>）<span class="token punctuation">;</span></code></pre>
-<p>idx 为起始位置，base 为字符进制。<br>需 #include<string>，且为 c ++11 开始增加的新 api<br>DEV 设置方法：工具 -&gt; 编译器选项 -&gt; 代码生成 / 优化 -&gt; 代码生成 -&gt; 语言标准 (-std)<br>（Tools -&gt; Compiler Options -&gt; Setting -&gt; Code Generation -&gt; Language standard(-std)）<br>\10. 获取整行<br>在含有空格，TAB 的输入中需要用到 getline()</string></p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token function">getline</span><span class="token punctuation">(</span>cin<span class="token punctuation">,</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>\11. 反转字符 reverse<br>反转范围中元素的顺序 [first,last)，函数调用 iter_swap 将元素交换到新位置，该功能模板的行为等效于：</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">BidirectionalIterator</span><span class="token operator">></span>
-  <span class="token keyword">void</span> <span class="token function">reverse</span> <span class="token punctuation">(</span>BidirectionalIterator first<span class="token punctuation">,</span> BidirectionalIterator last<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>first<span class="token operator">!=</span>last<span class="token punctuation">)</span><span class="token operator">&amp;&amp;</span><span class="token punctuation">(</span>first<span class="token operator">!=</span><span class="token operator">--</span>last<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    std<span class="token operator">::</span><span class="token function">iter_swap</span> <span class="token punctuation">(</span>first<span class="token punctuation">,</span>last<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">++</span>first<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<p>需要头文件 #include<algorithm></algorithm></p>
-<p><strong>6. 进制转换</strong><br>stoi 编译有风险，使用需谨慎 (hhhhh)</p>
-<pre><code>code.cpp:28:23: error: 'stoi' was not declared in this scope
-code.cpp:133:25: error: 'stoi' was not declared in this scope
-string toAns(long long n, int ne)//10进制转化为任意进制
-{
-    if (n == 0)return "0";
-    string str;
-    while (n)
-    {
-        int tm = n % ne;
-        if (tm &lt;= 9)
-            str += '0' + tm;
-        else 
-            str += 'A' + tm - 10; 
-        n /= ne;
-    }
-    reverse(str.begin(), str.end());
-    return str;
-}
-
-long long toTen(string str, int ne)//任意进制转化为10进制
-{
-    long long ans = 0, arg = 1;
-    for (int i = str.size() - 1; i &gt;= 0; --i)
-    {
-        if (str[i] &lt;= '9')
-            ans += (str[i] - '0') * arg;
-        else
-            ans += (str[i] - 'A' + 10) * arg;
-        arg *= ne;
-    }
-    return ans;
-}</code></pre><script>
+<h2 id="TCP-数据传输"><a href="#TCP-数据传输" class="headerlink" title="TCP 数据传输"></a><strong>TCP 数据传输</strong></h2><p>TCP 数据传输就是两个人隔空对话，差了一点距离，所以需要对方反复确认听见了自己的话。</p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-31fe3086faba9741b002fbb6be1ba881_b.jpg" alt="img"></p>
+<p>张三喊了一句话(data)，李四听见了之后要向张三回复自己听见了(ack)。</p>
+<p>如果张三喊了一句，半天没听到李四回复，张三就认为自己的话被大风吹走了，李四没听见，所以需要重新喊话，这就是tcp重传。</p>
+<p>也有可能是李四听到了张三的话，但是李四向张三的回复被大风吹走了，以至于张三没听见李四的回复。</p>
+<p>张三并不能判断究竟是自己的话被大风吹走了还是李四的回复被大风吹走了，张三也不用管，重传一下就是。</p>
+<p>既然会重传，李四就有可能同一句话听见了两次，这就是「去重」。「重传」和「去重」工作操作系统的网络内核模块都已经帮我们处理好了，用户层是不用关心的。</p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-67aa5907808feb7796f0704a7179e6c1_b.jpg" alt="img"></p>
+<p>张三可以向李四喊话，同样李四也可以向张三喊话，因为tcp链接是「双工的」，双方都可以主动发起数据传输。不过无论是哪方喊话，都需要收到对方的确认才能认为对方收到了自己的喊话。</p>
+<p>张三可能是个高射炮，一说连说了八句话，这时候李四可以不用一句一句回复，而是连续听了这八句话之后，一起向对方回复说前面你说的八句话我都听见了，这就是批量ack。</p>
+<p>但是张三也不能一次性说了太多话，李四的脑子短时间可能无法消化太多，两人之间需要有协商好的合适的发送和接受速率，这个就是「TCP窗口大小」。</p>
+<p>网络环境的数据交互同人类之间的对话还要复杂一些，它存在数据包乱序的现象。</p>
+<p>同一个来源发出来的不同数据包在「网际路由」上可能会走过不同的路径，最终达到同一个地方时，顺序就不一样了。</p>
+<p>操作系统的网络内核模块会负责对数据包进行排序，到用户层时顺序就已经完全一致了。</p>
+<h2 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a><strong>TCP 四次挥手</strong></h2><p>TCP断开链接的过程和建立链接的过程比较类似，只不过中间的两部并不总是会合成一步走，所以它分成了4个动作，张三挥手(fin)——李四伤感地微笑(ack)——李四挥手(fin)——张三伤感地微笑(ack)。</p>
+<p><img src="./1.gif" data-original="https://pic4.zhimg.com/v2-e2ae0f0b1cb03acca64798c5a44efb9b_b.jpg" alt="img"></p>
+<p>之所以中间的两个动作没有合并，是因为tcp存在「半关闭」状态，也就是单向关闭。</p>
+<p>张三已经挥了手，可是人还没有走，只是不再说话，但是耳朵还是可以继续听，李四呢继续喊话。等待李四累了，也不再说话了，超张三挥了挥手，张三伤感地微笑了一下，才彻底结束了。</p>
+<p><img src="./1.gif" data-original="https://pic3.zhimg.com/v2-cb48aa4340079357675e1b68d9fccef6_b.jpg" alt="img"></p>
+<p>上面有一个非常特殊的状态<code>time_wait</code>，它是主动关闭的一方在回复完对方的挥手后进入的一个长期状态，这个状态标准的持续时间是4分钟，4分钟后才会进入到closed状态，释放套接字资源。不过在具体实现上这个时间是可以调整的。</p>
+<p>它就好比主动分手方要承担的责任，是你提出的要分手，你得付出代价。这个后果就是持续4分钟的<code>time_wait</code>状态，不能释放套接字资源(端口)，就好比守寡期，这段时间内套接字资源(端口)不得回收利用。</p>
+<p>它的作用是重传最后一个ack报文，确保对方可以收到。因为如果对方没有收到ack的话，会重传fin报文，处于time_wait状态的套接字会立即向对方重发ack报文。</p>
+<p>同时在这段时间内，该链接在对话期间于网际路由上产生的残留报文(因为路径过于崎岖，数据报文走的时间太长，重传的报文都收到了，原始报文还在路上)传过来时，都会被立即丢弃掉。</p>
+<p>4分钟的时间足以使得这些残留报文彻底消逝。不然当新的端口被重复利用时，这些残留报文可能会干扰新的链接。</p>
+<p>4分钟就是2个MSL，每个MSL是2分钟。MSL就是<code>maximium segment lifetime</code>——最长报文寿命。这个时间是由官方RFC协议规定的。至于为什么是2个MSL而不是1个MSL，我还没有看到一个非常满意的解释。</p>
+<p>四次挥手也并不总是四次挥手，中间的两个动作有时候是可以合并一起进行的，这个时候就成了三次挥手，主动关闭方就会从<code>fin_wait_1</code>状态直接进入到<code>time_wait</code>状态，跳过了<code>fin_wait_2</code>状态。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h2><p>TCP状态转换是一个非常复杂的过程，本文仅对一些简单的基础知识点进行了类比讲解。关于TCP的更多知识还需要读者去搜寻相关技术文章进入深入学习。如果读者对TCP的基础知识掌握得比较牢固，高级的知识理解起来就不会太过于吃力。</p>
+<script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -823,16 +714,12 @@ long long toTen(string str, int ne)//任意进制转化为10进制
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                                    <span class="chip bg-color">客户端/服务器</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                                    <span class="chip bg-color">字符串</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/">
-                                    <span class="chip bg-color">进制转换</span>
+                                <a href="/tags/TCP/">
+                                    <span class="chip bg-color">TCP</span>
                                 </a>
                             
                         </div>
@@ -1020,29 +907,30 @@ long long toTen(string str, int ne)//任意进制转化为10进制
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/fb40.html">
+                <a href="/posts/942c.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="C语言和C++语言的区别">
+                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="TCP三次握手和四次挥手">
                         
-                        <span class="card-title">C语言和C++语言的区别</span>
+                        <span class="card-title">TCP三次握手和四次挥手</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            C和C++语言各种优势和劣势
+                            详细讲述TCP三次握手和四次挥手的整个过程
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-01
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1051,19 +939,16 @@ long long toTen(string str, int ne)//任意进制转化为10进制
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
+                    <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+                        <span class="chip bg-color">客户端/服务器</span>
                     </a>
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%87%BD%E6%95%B0/">
-                        <span class="chip bg-color">函数</span>
+                    <a href="/tags/TCP/">
+                        <span class="chip bg-color">TCP</span>
                     </a>
                     
                 </div>
@@ -1077,24 +962,24 @@ long long toTen(string str, int ne)//任意进制转化为10进制
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/de40.html">
+                <a href="/posts/ab92.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="一招搞定GitHub下载加速！">
+                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="阅读文献">
                         
-                        <span class="card-title">一招搞定GitHub下载加速！</span>
+                        <span class="card-title">阅读文献</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            提高Github下载速度，仓库快速管理
+                            研究生/本科生阅读文献
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-27
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
                             </span>
                         <span class="publish-author">
                             
@@ -1107,16 +992,12 @@ long long toTen(string str, int ne)//任意进制转化为10进制
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Github/">
-                        <span class="chip bg-color">Github</span>
+                    <a href="/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/">
+                        <span class="chip bg-color">阅读文献</span>
                     </a>
                     
-                    <a href="/tags/Gitee/">
-                        <span class="chip bg-color">Gitee</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%87%8D%E6%96%B0%E5%85%B3%E8%81%94%E8%BF%9C%E7%AB%AF%E5%9C%B0%E5%9D%80/">
-                        <span class="chip bg-color">重新关联远端地址</span>
+                    <a href="/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/">
+                        <span class="chip bg-color">读论文</span>
                     </a>
                     
                 </div>
