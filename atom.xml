@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-04-02T15:34:36.625Z</updated>
+  <updated>2020-04-02T15:35:54.865Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.xutguanpo.cn/posts/942c.html"/>
     <id>https://www.xutguanpo.cn/posts/942c.html</id>
     <published>2020-03-19T16:00:00.000Z</published>
-    <updated>2020-04-02T15:34:36.625Z</updated>
+    <updated>2020-04-02T15:35:54.865Z</updated>
     
     <summary type="html">
     
@@ -308,9 +308,9 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
-    
       <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
       <category term="C++" scheme="https://www.xutguanpo.cn/tags/C/"/>
     
@@ -398,13 +398,13 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
-    
       <category term="开源代码" scheme="https://www.xutguanpo.cn/tags/%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81/"/>
     
       <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
     
       <category term="开发工具" scheme="https://www.xutguanpo.cn/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
@@ -492,9 +492,9 @@
     
     
     
-      <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
-    
       <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
+      <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
     
   </entry>
   
