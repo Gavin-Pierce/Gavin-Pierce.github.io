@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-04-02T15:35:54.865Z</updated>
+  <updated>2020-04-10T14:21:20.966Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>详解进程</title>
+    <link href="https://www.xutguanpo.cn/posts/7d63.html"/>
+    <id>https://www.xutguanpo.cn/posts/7d63.html</id>
+    <published>2020-03-31T16:00:00.000Z</published>
+    <updated>2020-04-10T14:21:20.966Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;要讲线程，一般都得讲一讲进程，进程是何方神圣呢？下面来简单介绍一下。&lt;/p&gt;
+&lt;p&gt;先通过任务管理器看看 Windows 系统下的进程。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;./1.gif&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
+      <category term="进程" scheme="https://www.xutguanpo.cn/tags/%E8%BF%9B%E7%A8%8B/"/>
+    
+      <category term="僵尸进程" scheme="https://www.xutguanpo.cn/tags/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/"/>
+    
+      <category term="孤儿进程" scheme="https://www.xutguanpo.cn/tags/%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>TCP三次握手和四次挥手</title>
