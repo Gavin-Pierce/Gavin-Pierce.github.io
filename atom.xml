@@ -462,9 +462,9 @@
     
     
     
-      <category term="VS code" scheme="https://www.xutguanpo.cn/tags/VS-code/"/>
-    
       <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
+      <category term="VS code" scheme="https://www.xutguanpo.cn/tags/VS-code/"/>
     
       <category term="Markdown" scheme="https://www.xutguanpo.cn/tags/Markdown/"/>
     
@@ -494,13 +494,13 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
-    
       <category term="自己" scheme="https://www.xutguanpo.cn/tags/%E8%87%AA%E5%B7%B1/"/>
     
       <category term="坚持" scheme="https://www.xutguanpo.cn/tags/%E5%9D%9A%E6%8C%81/"/>
     
       <category term="生活" scheme="https://www.xutguanpo.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
