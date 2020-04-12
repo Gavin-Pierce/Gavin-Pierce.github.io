@@ -731,7 +731,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["Typora","C++","客户端/服务器","auto","C","VS code","Markdown","梦想","自己","坚持"]
+                data: ["Typora","C++","客户端/服务器","auto","C","梦想","自己","坚持","生活","VS code"]
             }
         ],
         yAxis: [
@@ -912,26 +912,14 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/VS-code/">
-                <span class="chip center-align waves-effect waves-light chip-default">VS code</span>
+            <a href="/tags/%E6%A2%A6%E6%83%B3/">
+                <span class="chip center-align waves-effect waves-light chip-default">梦想</span>
             </a>
             
             
             
             <a href="/tags/Typora/">
                 <span class="chip center-align waves-effect waves-light chip-default">Typora</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Markdown/">
-                <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%A2%A6%E6%83%B3/">
-                <span class="chip center-align waves-effect waves-light chip-default">梦想</span>
             </a>
             
             
@@ -950,6 +938,18 @@
             
             <a href="/tags/%E7%94%9F%E6%B4%BB/">
                 <span class="chip center-align waves-effect waves-light chip-default">生活</span>
+            </a>
+            
+            
+            
+            <a href="/tags/VS-code/">
+                <span class="chip center-align waves-effect waves-light chip-default">VS code</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Markdown/">
+                <span class="chip center-align waves-effect waves-light chip-default">Markdown</span>
             </a>
             
             
@@ -1008,24 +1008,6 @@
             
             
             
-            <a href="/tags/Github/">
-                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
-            </a>
-            
-            
-            
-            <a href="/tags/Gitee/">
-                <span class="chip center-align waves-effect waves-light chip-default">Gitee</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E9%87%8D%E6%96%B0%E5%85%B3%E8%81%94%E8%BF%9C%E7%AB%AF%E5%9C%B0%E5%9D%80/">
-                <span class="chip center-align waves-effect waves-light chip-default">重新关联远端地址</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/">
                 <span class="chip center-align waves-effect waves-light chip-default">毕业论文</span>
             </a>
@@ -1046,6 +1028,24 @@
             
             <a href="/tags/%E7%AD%94%E8%BE%A9/">
                 <span class="chip center-align waves-effect waves-light chip-default">答辩</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Github/">
+                <span class="chip center-align waves-effect waves-light chip-default">Github</span>
+            </a>
+            
+            
+            
+            <a href="/tags/Gitee/">
+                <span class="chip center-align waves-effect waves-light chip-default">Gitee</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E9%87%8D%E6%96%B0%E5%85%B3%E8%81%94%E8%BF%9C%E7%AB%AF%E5%9C%B0%E5%9D%80/">
+                <span class="chip center-align waves-effect waves-light chip-default">重新关联远端地址</span>
             </a>
             
             
@@ -1116,6 +1116,12 @@
             
             
             
+            <a href="/tags/TCP/">
+                <span class="chip center-align waves-effect waves-light chip-default">TCP</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/">
                 <span class="chip center-align waves-effect waves-light chip-default">阅读文献</span>
             </a>
@@ -1124,12 +1130,6 @@
             
             <a href="/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/">
                 <span class="chip center-align waves-effect waves-light chip-default">读论文</span>
-            </a>
-            
-            
-            
-            <a href="/tags/TCP/">
-                <span class="chip center-align waves-effect waves-light chip-default">TCP</span>
             </a>
             
             
@@ -1469,7 +1469,7 @@ $(function () {
                 const host = strs[2];
                 if (host !== 'xutguanpo.cn' || window.location.host) {
                     $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (false) {
+                    if (true) {
                         $this.attr('target', '_blank');
                     }
                 }
