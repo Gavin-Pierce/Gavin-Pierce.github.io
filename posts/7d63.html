@@ -627,12 +627,12 @@
             <div id="articleContent">
                 <p>要讲线程，一般都得讲一讲进程，进程是何方神圣呢？下面来简单介绍一下。</p>
 <p>先通过任务管理器看看 Windows 系统下的进程。</p>
-<p><img src="./1.gif" data-original="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200410215653505.png" alt="image-20200410215653505"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/6d219a1b742d4d87a3b8721999843cbf_0063_02.jpg" alt=""></p>
 <p>从图片来看，每一个进程都占有 CPU、内存、磁盘、网络等资源。<strong>站在操作系统的角度，进程是分配资源的基本单位，也是最小单位</strong>。</p>
 <h2 id="进程为什么出现？"><a href="#进程为什么出现？" class="headerlink" title="进程为什么出现？"></a>进程为什么出现？</h2><p>引入进程的目的：<strong>为了使多个程序能并发执行，以提高资源的利用率和系统的吞吐量</strong>。怎么理解这句话呢？一个程序在运行过程中会涉及很多操作，利用 CPU 计算、通过磁盘 IO 进行数据传输等等，我们知道当程序在进行磁盘 IO 的时候，因为速度问题，会比较慢，所在在这个过程中 CPU 会空闲下来，这会造成资源的浪费，正因为引入进程，在 A 进程进行磁盘 IO 的时候，会让出 CPU 给 B 进程，合理地利用了 CPU 资源，使得程序之间可以并发执行。</p>
 <p>从 CPU 角度，执行过程是这样子的：CPU 一直在负责执行指令，进程之间互相竞争 CPU 资源，下图有 A 和 B 进程，在一个时间点，CPU 只执行一个进程的指令，因为 CPU 运行很快，所以在咱们看起来，像是多个进程在同时跑。这就是进程带来的好处：<strong>提高资源利用率，并发地执行多个程序</strong>。</p>
 <p>当然引入进程也不是有益无害，它增加了系统的<strong>时间</strong>和<strong>空间</strong>开销。空间开销这个好理解，进程有自己的组成部分（下面会讲），这个就占用了空间。时间开销则是进程切换需要时间。</p>
-<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/eae39f00d0af4fbc873b98792edb2484_0063_05.jpg" alt="eae39f00d0af4fbc873b98792edb2484_0063_05.jpg"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/eae39f00d0af4fbc873b98792edb2484_0063_05.jpg" alt=""></p>
 <h2 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h2><p>进程由 3 个部分组成，分别是<strong>程序代码</strong>、<strong>数据集、栈</strong>和<strong>进程控制块（Process Control Block）</strong>。</p>
 <p>各自的作用如下：</p>
 <ol>
@@ -651,7 +651,7 @@
 <p>特点：<strong>有利于短进程</strong>，和 SPN 的差别在于<strong>抢占</strong>这个一点，因为抢占，所以效率会比 SPN 好一些。</p>
 <h3 id="HRRN"><a href="#HRRN" class="headerlink" title="HRRN"></a>HRRN</h3><p><strong>Highest Response Ratio Next（最高响应比优先）</strong>：当前运行的进程完成或者阻塞时发生调度，每次调度前，计算所有就绪进程的响应比，响应比高的进程优先运行。</p>
 <p>响应比公式如下所示：</p>
-<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/623a001261014c5ca8391a5e5e8bd535_0063_06.jpg" alt="623a001261014c5ca8391a5e5e8bd535_0063_06.jpg"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/623a001261014c5ca8391a5e5e8bd535_0063_06.jpg" alt=""></p>
 <p>特点：<strong>有利于短进程</strong>，<strong>服务时间相同的进程，先来的服务会优先执行</strong>，<strong>长进程因为在等待的过程中，优先级越来越高，所以不会一直不执行</strong>。</p>
 <h3 id="FB"><a href="#FB" class="headerlink" title="FB"></a>FB</h3><p><strong>Feedback （反馈）</strong>：由多个就绪队列组成的反馈机制，它有如下规则：</p>
 <ol>
@@ -661,23 +661,23 @@
 <li>只有上级队列无就绪进程时，才运行本级就绪队列，本级就绪队列无进程时，才运行下级就绪队列，以此类推</li>
 </ol>
 <p>进程执行过程如下图所示</p>
-<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/c4793a3e287b4b348165a92b309e198f_0063_07.jpg" alt="c4793a3e287b4b348165a92b309e198f_0063_07.jpg"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/c4793a3e287b4b348165a92b309e198f_0063_07.jpg" alt=""></p>
 <p>特点：<strong>短进程有非常大的优势，排在前面的队列都是时间较短的</strong>。</p>
 <p>以上就是几个抢占资源的调度算法的说明。</p>
 <h2 id="进程状态"><a href="#进程状态" class="headerlink" title="进程状态"></a>进程状态</h2><p>上面我们讲到，进程之间是在竞争资源，得到资源就运行，没得到就等待，这个需要有状态来维护，像很多系统一样，需要一个状态机。</p>
 <h3 id="三态图"><a href="#三态图" class="headerlink" title="三态图"></a>三态图</h3><p>三态图也是描述进程状态最简单最基础的图，它包含了进程的最基本的 3 个状态，分别是：就绪态、运行态和阻塞态。</p>
 <p><strong>Read（就绪态）</strong>：进程已得到除 CPU 以外的其他所需资源。 <strong>Running（运行态）</strong>：进程的指令正被执行。 <strong>Blocked（阻塞态）</strong>：进程正等待资源或某事件发生。</p>
-<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/f7d9615c2c6e4b9ea8ab8b49ffeab991_0063_10.jpg" alt="进程三态图"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/f7d9615c2c6e4b9ea8ab8b49ffeab991_0063_10.jpg" alt=""></p>
 <p><strong>就绪态</strong>的进程在被调度的时候，进入了<strong>运行态</strong>，如果时间片运行完或者有更高级别进程抢占资源，则变成<strong>就绪态</strong>等待再次被调度；如果发生事件（比如 IO 事件），则从<strong>运行态</strong>转到<strong>阻塞态</strong>，进入<strong>阻塞态</strong>的进程只能等待事件解除重新进入<strong>就绪态</strong>。</p>
 <h3 id="五态图"><a href="#五态图" class="headerlink" title="五态图"></a>五态图</h3><p>基于三态图，新增了 2 个状态，分别是：新建态和退出态。</p>
 <p><strong>New（新建态）</strong>：进程正被创建。分配内存后将被设为就绪态。</p>
 <p><strong>Exit（退出态）</strong>：进程已正常结束或出现异常结束。回收资源。</p>
-<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/6c51868bc22d433a8f9fd703ebd8ba3a_0063_09.jpg" alt="进程五态图"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/6c51868bc22d433a8f9fd703ebd8ba3a_0063_09.jpg" alt=""></p>
 <p>新进程刚创建还没有分配资源的时候是<strong>新建态</strong>，等到分配了资源，被加载后就进入<strong>就绪态</strong>。当进程运行完后，就从<strong>运行态</strong>进入<strong>退出态</strong>。</p>
 <h3 id="七态图"><a href="#七态图" class="headerlink" title="七态图"></a>七态图</h3><p>基于五态图，新增了 2 种挂起态，分别是就绪挂起态和阻塞挂起态。</p>
 <p><strong>就绪挂起态</strong>：另叫外存就绪态。由于内存容量有限，将原位于内存的<strong>就绪进程</strong>转存到外存（磁盘）上。</p>
 <p><strong>阻塞挂起态</strong>：另叫外存阻塞态。一样因为内存容量有限，将原位于内存的<strong>阻塞进程</strong>转存到外存（磁盘）上。</p>
-<p><img src="./1.gif" data-original="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200410220833132.png" alt="image-20200410220833132"></p>
+<p><img src="./1.gif" data-original="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200410220833132.png" alt=""></p>
 <p>我们可以看出，图中新增了<strong>解除挂起</strong>的状态转换过程，一般是由于挂起进程优先级比较高或者内存空间足够，把位于外存（磁盘）的进程转存到内存中。</p>
 <h2 id="进程关系"><a href="#进程关系" class="headerlink" title="进程关系"></a>进程关系</h2><p>进程之间其实比较独立，比如我们在日常使用的 QQ 和微信，它们运行起来的进程有什么关系么？其实除了互相竞争资源之外，没有任何关系。</p>
 <h3 id="父子关系"><a href="#父子关系" class="headerlink" title="父子关系"></a>父子关系</h3><p>虽然上面说的进程之间没有关系，但是有一个特殊关系需要讲，就是<strong>父子关系</strong>。</p>
@@ -688,9 +688,9 @@
 <li>将新开的 CMD 命令行程序的窗口设置为 Grandson。</li>
 </ol>
 <p>操作过程如下图所示。</p>
-<p><img src="./1.gif" data-original="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200410221218190.png" alt="image-20200410221218190"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/d8bd7ca9f741421bae44086e46017e38_0063_03.jpg" alt=""></p>
 <p>通过 ProcessExplorer 可以很清晰看到这 3 个 CMD 进程之间的关系。（想要 ProcessExplorer 插件可以通过百度网盘下载链接：<a href="https://pan.baidu.com/s/19531gf5tD_of1CWxpFR9Dg" target="_blank" rel="noopener">https://pan.baidu.com/s/19531gf5tD_of1CWxpFR9Dg</a> 提取码：qhc6）</p>
-<p><img src="./1.gif" data-original="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200410221303392.png" alt="image-20200410221303392"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/724e7560357a453ea0b2436522f465e5_0063_04.jpg" alt=""></p>
 <p>我们看到 Father、Son、Grandson 三个进程呈现出我们预料中的树形。那么什么是<strong>父子进程</strong>呢？简单的说就是在进程中创建出新的进程，这个新的进程就是子进程，一个进程可以有多个子进程，但是只能有一个父进程。在 Unix 系统中，父进程通过调用 <code>fork()</code> 创建子进程，父子进程有如下特点：</p>
 <ol>
 <li>父、子进程并发执行；</li>
@@ -706,7 +706,7 @@
 <p>孤儿进程没有危害，因为被 init 进程托管了，init 进程会处理孤儿进程的收集工作。</p>
 <h2 id="执行模式"><a href="#执行模式" class="headerlink" title="执行模式"></a>执行模式</h2><p>指令分为<strong>特权指令</strong>（只能由操作系统内核使用的指令）和<strong>非特权指令</strong>（只能由用户程序使用的指令），因为指令有特权和非特权之分，所以 CPU 也分为 2 种执行模式：<strong>系统态</strong>（可以执行所有指令，使用所有资源以及改变 CPU 状态）和<strong>用户态</strong>（只能执行非特权指令）。</p>
 <p>CPU 的系统态和用户态之间的切换。</p>
-<p><img src="./1.gif" data-original="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200410221437378.png" alt="image-20200410221437378"></p>
+<p><img src="./1.gif" data-original="http://www.liebrother.com/upload/8e4c95cdd3984f858dc04027cea864c7_0063_11.jpg" alt=""></p>
 <h2 id="进程间通讯"><a href="#进程间通讯" class="headerlink" title="进程间通讯"></a>进程间通讯</h2><p>当进程之间需要数据传输、共享数据时，进程间就需要互相通讯，通讯方式有如下几种，这里只是简单概括一下，不展开讲，咱的重点在于多线程，进程咱们简单了解一下就可以，感兴趣的同学可以根据要点进行深入学习。</p>
 <h3 id="管道（Pipe）"><a href="#管道（Pipe）" class="headerlink" title="管道（Pipe）"></a>管道（Pipe）</h3><p>管道是半双工通讯，数据是单向流动，要建立进程间互相通讯，则需要 2 个管道，这种通讯方式只能在亲戚关系的进程间使用，比如父子进程。</p>
 <h3 id="流管道（Flow-Pipe）"><a href="#流管道（Flow-Pipe）" class="headerlink" title="流管道（Flow Pipe）"></a>流管道（Flow Pipe）</h3><p>流管道是管道进化来的，数据不再是单向流动，可以双向流动，但是依旧是只能在亲戚关系的进程间使用。</p>
