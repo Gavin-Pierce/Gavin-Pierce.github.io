@@ -619,12 +619,12 @@
             <div id="articleContent">
                 <p><strong>TCP 三次握手</strong></p>
 <p>TCP 三次握手就好比两个人在街上隔着50米看见了对方，但是因为雾霾等原因不能100%确认，所以要通过招手的方式相互确定对方是否认识自己。</p>
-<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-9543c68c124910cfe3090285c1f61241_b.jpg" alt="img"></p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-9543c68c124910cfe3090285c1f61241_b.webp" alt=""></p>
 <p>张三首先向李四招手(syn)，李四看到张三向自己招手后，向对方点了点头挤出了一个微笑(ack)。张三看到李四微笑后确认了李四成功辨认出了自己(进入estalished状态)。</p>
 <p>但是李四还有点狐疑，向四周看了一看，有没有可能张三是在看别人呢，他也需要确认一下。</p>
 <p>所以李四也向张三招了招手(syn)，张三看到李四向自己招手后知道对方是在寻求自己的确认，于是也点了点头挤出了微笑(ack)，李四看到对方的微笑后确认了张三就是在向自己打招呼(进入established状态)。</p>
 <p>于是两人加快步伐，走到了一起，相互拥抱</p>
-<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-d31e97fab9a8e987235a4a5554ffd43d_b.webp" alt="img"></p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-d31e97fab9a8e987235a4a5554ffd43d_b.webp" alt=""></p>
 <p>我们看到这个过程中一共是四个动作，张三招手–李四点头微笑–李四招手–张三点头微笑。</p>
 <p>其中李四连续进行了2个动作，先是点头微笑(回复对方)，然后再次招手(寻求确认)，实际上可以将这两个动作合一，招手的同时点头和微笑(syn+ack)。</p>
 <p>于是四个动作就简化成了三个动作，张三招手–李四点头微笑并招手–张三点头微笑。这就是三次握手的本质，中间的一次动作是两个动作的合并。</p>
@@ -635,13 +635,13 @@
 <li>syn_rcvd: syn package has been received</li>
 </ul>
 <h2 id="TCP-数据传输"><a href="#TCP-数据传输" class="headerlink" title="TCP 数据传输"></a><strong>TCP 数据传输</strong></h2><p>TCP 数据传输就是两个人隔空对话，差了一点距离，所以需要对方反复确认听见了自己的话。</p>
-<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-31fe3086faba9741b002fbb6be1ba881_b.jpg" alt="img"></p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-31fe3086faba9741b002fbb6be1ba881_b.webp" alt=""></p>
 <p>张三喊了一句话(data)，李四听见了之后要向张三回复自己听见了(ack)。</p>
 <p>如果张三喊了一句，半天没听到李四回复，张三就认为自己的话被大风吹走了，李四没听见，所以需要重新喊话，这就是tcp重传。</p>
 <p>也有可能是李四听到了张三的话，但是李四向张三的回复被大风吹走了，以至于张三没听见李四的回复。</p>
 <p>张三并不能判断究竟是自己的话被大风吹走了还是李四的回复被大风吹走了，张三也不用管，重传一下就是。</p>
 <p>既然会重传，李四就有可能同一句话听见了两次，这就是「去重」。「重传」和「去重」工作操作系统的网络内核模块都已经帮我们处理好了，用户层是不用关心的。</p>
-<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-67aa5907808feb7796f0704a7179e6c1_b.jpg" alt="img"></p>
+<p><img src="./1.gif" data-original="https://pic2.zhimg.com/v2-67aa5907808feb7796f0704a7179e6c1_b.webp" alt=""></p>
 <p>张三可以向李四喊话，同样李四也可以向张三喊话，因为tcp链接是「双工的」，双方都可以主动发起数据传输。不过无论是哪方喊话，都需要收到对方的确认才能认为对方收到了自己的喊话。</p>
 <p>张三可能是个高射炮，一说连说了八句话，这时候李四可以不用一句一句回复，而是连续听了这八句话之后，一起向对方回复说前面你说的八句话我都听见了，这就是批量ack。</p>
 <p>但是张三也不能一次性说了太多话，李四的脑子短时间可能无法消化太多，两人之间需要有协商好的合适的发送和接受速率，这个就是「TCP窗口大小」。</p>
@@ -649,10 +649,10 @@
 <p>同一个来源发出来的不同数据包在「网际路由」上可能会走过不同的路径，最终达到同一个地方时，顺序就不一样了。</p>
 <p>操作系统的网络内核模块会负责对数据包进行排序，到用户层时顺序就已经完全一致了。</p>
 <h2 id="TCP-四次挥手"><a href="#TCP-四次挥手" class="headerlink" title="TCP 四次挥手"></a><strong>TCP 四次挥手</strong></h2><p>TCP断开链接的过程和建立链接的过程比较类似，只不过中间的两部并不总是会合成一步走，所以它分成了4个动作，张三挥手(fin)——李四伤感地微笑(ack)——李四挥手(fin)——张三伤感地微笑(ack)。</p>
-<p><img src="./1.gif" data-original="https://pic4.zhimg.com/v2-e2ae0f0b1cb03acca64798c5a44efb9b_b.jpg" alt="img"></p>
+<p><img src="./1.gif" data-original="https://pic4.zhimg.com/v2-e2ae0f0b1cb03acca64798c5a44efb9b_b.webp" alt=""></p>
 <p>之所以中间的两个动作没有合并，是因为tcp存在「半关闭」状态，也就是单向关闭。</p>
 <p>张三已经挥了手，可是人还没有走，只是不再说话，但是耳朵还是可以继续听，李四呢继续喊话。等待李四累了，也不再说话了，超张三挥了挥手，张三伤感地微笑了一下，才彻底结束了。</p>
-<p><img src="./1.gif" data-original="https://pic3.zhimg.com/v2-cb48aa4340079357675e1b68d9fccef6_b.jpg" alt="img"></p>
+<p><img src="./1.gif" data-original="https://pic3.zhimg.com/v2-cb48aa4340079357675e1b68d9fccef6_b.webp" alt=""></p>
 <p>上面有一个非常特殊的状态<code>time_wait</code>，它是主动关闭的一方在回复完对方的挥手后进入的一个长期状态，这个状态标准的持续时间是4分钟，4分钟后才会进入到closed状态，释放套接字资源。不过在具体实现上这个时间是可以调整的。</p>
 <p>它就好比主动分手方要承担的责任，是你提出的要分手，你得付出代价。这个后果就是持续4分钟的<code>time_wait</code>状态，不能释放套接字资源(端口)，就好比守寡期，这段时间内套接字资源(端口)不得回收利用。</p>
 <p>它的作用是重传最后一个ack报文，确保对方可以收到。因为如果对方没有收到ack的话，会重传fin报文，处于time_wait状态的套接字会立即向对方重发ack报文。</p>
@@ -972,9 +972,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="阅读文献">
+                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="研究生们高效率看英文文献是怎么看的？">
                         
-                        <span class="card-title">阅读文献</span>
+                        <span class="card-title">研究生们高效率看英文文献是怎么看的？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1217,7 +1217,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">37.8k</span>&nbsp;字
+                class="white-color">36.8k</span>&nbsp;字
             
             
             
