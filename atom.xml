@@ -83,7 +83,7 @@
     <link href="https://www.xutguanpo.cn/posts/ab92.html"/>
     <id>https://www.xutguanpo.cn/posts/ab92.html</id>
     <published>2020-03-12T16:00:00.000Z</published>
-    <updated>2020-04-12T13:59:51.977Z</updated>
+    <updated>2020-04-12T14:04:17.033Z</updated>
     
     <summary type="html">
     
@@ -205,7 +205,7 @@
     <link href="https://www.xutguanpo.cn/posts/fb40.html"/>
     <id>https://www.xutguanpo.cn/posts/fb40.html</id>
     <published>2020-02-29T16:00:00.000Z</published>
-    <updated>2020-03-16T07:46:42.822Z</updated>
+    <updated>2020-04-12T14:08:33.861Z</updated>
     
     <summary type="html">
     
@@ -213,8 +213,8 @@
       
         
         
-          &lt;p&gt;1、说一下C++和C的区别？**&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;设计思想上：&lt;/strong&gt;&lt;br&gt;C++是面向对象的语言，而C是面向过程的结构化编程语言&lt;br&gt;&lt;strong&gt;语法上：&lt;/strong&gt;&lt;br&gt;C++具有封装、继承和多态三种特性&lt;br&gt;C++相比C，增加
+          &lt;p&gt;1、说一下C++和C的区别？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;设计思想上：&lt;/strong&gt;&lt;br&gt;C++是面向对象的语言，而C是面向过程的结构化编程语言&lt;br&gt;&lt;strong&gt;语法上：&lt;/strong&gt;&lt;br&gt;C++具有封装、继承和多态三种特性&lt;br&gt;C++相比C，增加多许
         
       
     
@@ -235,7 +235,7 @@
     <link href="https://www.xutguanpo.cn/posts/27f1.html"/>
     <id>https://www.xutguanpo.cn/posts/27f1.html</id>
     <published>2020-02-27T16:00:00.000Z</published>
-    <updated>2020-03-20T09:19:45.940Z</updated>
+    <updated>2020-04-12T14:11:42.925Z</updated>
     
     <summary type="html">
     
@@ -265,7 +265,7 @@
     <link href="https://www.xutguanpo.cn/posts/de40.html"/>
     <id>https://www.xutguanpo.cn/posts/de40.html</id>
     <published>2020-02-26T16:00:00.000Z</published>
-    <updated>2020-03-31T14:54:06.717Z</updated>
+    <updated>2020-04-12T14:22:27.099Z</updated>
     
     <summary type="html">
     
@@ -325,7 +325,7 @@
     <link href="https://www.xutguanpo.cn/posts/c76d.html"/>
     <id>https://www.xutguanpo.cn/posts/c76d.html</id>
     <published>2020-02-22T16:00:00.000Z</published>
-    <updated>2020-03-20T09:03:03.604Z</updated>
+    <updated>2020-04-12T14:23:56.698Z</updated>
     
     <summary type="html">
     
@@ -352,11 +352,11 @@
   </entry>
   
   <entry>
-    <title>TCP传输协议</title>
-    <link href="https://www.xutguanpo.cn/posts/f5b7.html"/>
-    <id>https://www.xutguanpo.cn/posts/f5b7.html</id>
+    <title>ICP备案</title>
+    <link href="https://www.xutguanpo.cn/posts/ea98.html"/>
+    <id>https://www.xutguanpo.cn/posts/ea98.html</id>
     <published>2020-02-20T16:00:00.000Z</published>
-    <updated>2020-03-16T06:55:05.872Z</updated>
+    <updated>2020-04-12T14:37:56.428Z</updated>
     
     <summary type="html">
     
@@ -364,7 +364,7 @@
       
         
         
-          &lt;h2 id=&quot;TCP三次握手&quot;&gt;&lt;a href=&quot;#TCP三次握手&quot; class=&quot;headerlink&quot;
+          &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;​           前一段时间，博客域名在申请ICP备案，暂时不能访问。等待了半个月，终于收到备案成功的通知了，可以正常访问啦：&lt;a
         
       
     
@@ -372,11 +372,11 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+      <category term="ICP" scheme="https://www.xutguanpo.cn/tags/ICP/"/>
     
-      <category term="TCP握手协议" scheme="https://www.xutguanpo.cn/tags/TCP%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE/"/>
+      <category term="博客" scheme="https://www.xutguanpo.cn/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="客户端/服务器" scheme="https://www.xutguanpo.cn/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+      <category term="域名" scheme="https://www.xutguanpo.cn/tags/%E5%9F%9F%E5%90%8D/"/>
     
   </entry>
   
@@ -385,7 +385,7 @@
     <link href="https://www.xutguanpo.cn/posts/16d9.html"/>
     <id>https://www.xutguanpo.cn/posts/16d9.html</id>
     <published>2020-02-20T14:22:22.000Z</published>
-    <updated>2020-03-16T06:54:51.392Z</updated>
+    <updated>2020-04-12T14:34:05.658Z</updated>
     
     <summary type="html">
     
@@ -393,7 +393,7 @@
       
         
         
-          &lt;p&gt;&lt;strong&gt;## socket函数&lt;/strong&gt;&lt;/p&gt;
+          &lt;p&gt;&lt;strong&gt;socket函数&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;socket函数对应于普通文件的打开操作。普通文件的打开操作返回一个文件描述字，而&lt;code&gt;socket()&lt;/code&gt;用于创建一个socket描述符（socket
         
       
@@ -415,7 +415,7 @@
     <link href="https://www.xutguanpo.cn/posts/b54b.html"/>
     <id>https://www.xutguanpo.cn/posts/b54b.html</id>
     <published>2020-02-17T16:00:00.000Z</published>
-    <updated>2020-03-16T06:35:47.301Z</updated>
+    <updated>2020-04-12T14:34:48.892Z</updated>
     
     <summary type="html">
     
@@ -446,7 +446,7 @@
     <link href="https://www.xutguanpo.cn/posts/1513.html"/>
     <id>https://www.xutguanpo.cn/posts/1513.html</id>
     <published>2020-02-15T16:00:00.000Z</published>
-    <updated>2020-03-16T06:31:37.638Z</updated>
+    <updated>2020-04-12T14:35:42.595Z</updated>
     
     <summary type="html">
     
@@ -494,13 +494,13 @@
     
     
     
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
       <category term="自己" scheme="https://www.xutguanpo.cn/tags/%E8%87%AA%E5%B7%B1/"/>
     
       <category term="坚持" scheme="https://www.xutguanpo.cn/tags/%E5%9D%9A%E6%8C%81/"/>
     
       <category term="生活" scheme="https://www.xutguanpo.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
@@ -525,9 +525,9 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
-    
       <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   

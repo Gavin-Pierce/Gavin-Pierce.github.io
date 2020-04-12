@@ -639,35 +639,33 @@
 <p>顶层const表示指针本身是个常量<br>底层const表示指针所指的对象是个常量</p>
 </blockquote>
 <ol>
-<li>比如当初始值指向一个常量指针时：</li>
+<li><p>比如当初始值指向一个常量指针时：</p>
+<p>cpp</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">const</span> <span class="token keyword">int</span> ci <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cr <span class="token operator">=</span> ci<span class="token punctuation">;</span>
+<span class="token keyword">auto</span> b <span class="token operator">=</span> ci<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//b是一个整数（ci的顶层特性被忽略掉了）</span>
+<span class="token keyword">auto</span> c <span class="token operator">=</span> cr<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//c是一个整数（cr是ci的别名，而ci本身是一个顶层const）</span>
+<span class="token keyword">auto</span> d <span class="token operator">=</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//d是一个整型指针（整数的地址就是指向整数的指针）</span>
+<span class="token keyword">auto</span> e <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//e是一个指向整数常量的指针（对常量对象取地址是一种底层const）</span></code></pre>
+</li>
+<li><p>如果希望推断出的auto类型是一个顶层const，需要明确指出：</p>
+<p>cpp</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">const</span> <span class="token keyword">auto</span> f <span class="token operator">=</span> ci<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//ci的推演类型是int，f是const int</span></code></pre>
+</li>
+<li><p>引用的类型设为auto，原来的初始化规则仍然适用</p>
+<p>cpp</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> <span class="token operator">&amp;</span>g <span class="token operator">=</span> ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//g是一个整型常量引用，绑定到ci</span>
+<span class="token keyword">auto</span> <span class="token operator">&amp;</span>h <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误：不能为非常量引用绑定字面值</span>
+<span class="token keyword">const</span> <span class="token keyword">auto</span> <span class="token operator">&amp;</span>j <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//正确：可以为常量引用绑定字面值</span></code></pre>
+<p>设置一个auto类型的引用时，初始值中的顶层常量属性仍然保留。和往常一样，如果我们给初值绑定一个引用，则此时的常量就不是顶层常量了。</p>
+</li>
+<li><p>要在一条语句中定义多个变量，切记，符号&amp;和*只从属于某个声明符，而非基本数据类型的一部分，因此初始值必须是同一种类型。</p>
+<p>cpp</p>
+<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> k <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">&amp;</span>l <span class="token operator">=</span> i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//k是整数，l是整型引用</span>
+<span class="token keyword">auto</span> <span class="token operator">&amp;</span>m <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//m是整型常量的引用，p是指向整型常量的指针</span>
+<span class="token keyword">auto</span> <span class="token operator">&amp;</span>n <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">*</span>p2 <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误：i是整型int，而&amp;ci是整型常量const int</span></code></pre>
+</li>
 </ol>
-<p>   cpp</p>
-<pre class=" language-cpp"><code class="language-cpp">   <span class="token keyword">const</span> <span class="token keyword">int</span> ci <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cr <span class="token operator">=</span> ci<span class="token punctuation">;</span>
-   <span class="token keyword">auto</span> b <span class="token operator">=</span> ci<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//b是一个整数（ci的顶层特性被忽略掉了）</span>
-   <span class="token keyword">auto</span> c <span class="token operator">=</span> cr<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//c是一个整数（cr是ci的别名，而ci本身是一个顶层const）</span>
-   <span class="token keyword">auto</span> d <span class="token operator">=</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//d是一个整型指针（整数的地址就是指向整数的指针）</span>
-   <span class="token keyword">auto</span> e <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//e是一个指向整数常量的指针（对常量对象取地址是一种底层const）</span></code></pre>
-<ol start="2">
-<li>如果希望推断出的auto类型是一个顶层const，需要明确指出：</li>
-</ol>
-<p>   cpp</p>
-<pre class=" language-cpp"><code class="language-cpp">   <span class="token keyword">const</span> <span class="token keyword">auto</span> f <span class="token operator">=</span> ci<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//ci的推演类型是int，f是const int</span></code></pre>
-<ol start="3">
-<li>引用的类型设为auto，原来的初始化规则仍然适用</li>
-</ol>
-<p>   cpp</p>
-<pre class=" language-cpp"><code class="language-cpp">   <span class="token keyword">auto</span> <span class="token operator">&amp;</span>g <span class="token operator">=</span> ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//g是一个整型常量引用，绑定到ci</span>
-   <span class="token keyword">auto</span> <span class="token operator">&amp;</span>h <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误：不能为非常量引用绑定字面值</span>
-   <span class="token keyword">const</span> <span class="token keyword">auto</span> <span class="token operator">&amp;</span>j <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//正确：可以为常量引用绑定字面值</span></code></pre>
-<p>   设置一个auto类型的引用时，初始值中的顶层常量属性仍然保留。和往常一样，如果我们给初值绑定一个引用，则此时的常量就不是顶层常量了。</p>
-<ol start="4">
-<li>要在一条语句中定义多个变量，切记，符号&amp;和*只从属于某个声明符，而非基本数据类型的一部分，因此初始值必须是同一种类型。</li>
-</ol>
-<p>   cpp</p>
-<pre class=" language-cpp"><code class="language-cpp">   <span class="token keyword">auto</span> k <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">&amp;</span>l <span class="token operator">=</span> i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//k是整数，l是整型引用</span>
-   <span class="token keyword">auto</span> <span class="token operator">&amp;</span>m <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//m是整型常量的引用，p是指向整型常量的指针</span>
-   <span class="token keyword">auto</span> <span class="token operator">&amp;</span>n <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">*</span>p2 <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误：i是整型int，而&amp;ci是整型常量const int</span></code></pre>
-<h2 id="3-完整实例代码"><a href="#3-完整实例代码" class="headerlink" title="3. 完整实例代码"></a>3. 完整实例代码</h2><p>cpp</p>
+<h2 id="3-完整实例代码"><a href="#3-完整实例代码" class="headerlink" title="3. 完整实例代码"></a>3. 完整实例代码</h2><p>​    cpp</p>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> item <span class="token operator">=</span> val1 <span class="token operator">+</span> val2<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//由val1和val2相加的结果可以推断出item的类型 </span>
 <span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//正确：i是整数，p是整型指针</span>
 <span class="token keyword">auto</span> sz <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> pi <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//错误：sz和pi的类型不一致</span>
@@ -998,19 +996,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/f5b7.html">
+                <a href="/posts/ea98.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="TCP传输协议">
+                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="ICP备案">
                         
-                        <span class="card-title">TCP传输协议</span>
+                        <span class="card-title">ICP备案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            讲述TCP三次握手和四次挥手
+                            ICP备案经历的事情
                         
                     </div>
                     <div class="publish-info">
@@ -1028,16 +1026,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/ICP/">
+                        <span class="chip bg-color">ICP</span>
                     </a>
                     
-                    <a href="/tags/TCP%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE/">
-                        <span class="chip bg-color">TCP握手协议</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
-                    <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">客户端/服务器</span>
+                    <a href="/tags/%E5%9F%9F%E5%90%8D/">
+                        <span class="chip bg-color">域名</span>
                     </a>
                     
                 </div>
@@ -1251,7 +1249,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.8k</span>&nbsp;字
+                class="white-color">39k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML,github,JavaScript,c++,hexo,Vue.js等">
+    <meta name="keywords" content="标签: ICP, HTML,github,JavaScript,c++,hexo,Vue.js等">
     <meta name="description" content="专注于C/C++,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Gavin</title>
+    <title>标签: ICP | Gavin</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/awesome/css/all.css">
@@ -439,56 +439,9 @@
 
 </header>
 
-    
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color:rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -515,175 +468,425 @@
     </script>
     
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/Gavin-Pierce" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:528672701@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=528672701" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 528672701" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    // TODO 此处的轮播尚需优化，PC/Mobile 在触摸切换时都感觉相当不灵活
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function() {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    <div class="row" style="text-align: center;font-weight: bolder;color: #000;">
-                        <p><i class="fa fa-bullhorn"></i>&nbsp;&nbsp;声明： 转载文章之前请先联系作者，征求同意后，
-                            在进行转载，并在文章中声明原文作者及出处，谢谢合作！未经过作者同意进行转载，追究其责任！</p>
-                        </div>
-                    
 
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/%E6%A2%A6%E6%83%B3/" title="梦想: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="梦想" style="background-color: #F9EBEA;">梦想
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Typora/" title="Typora: 7">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Typora" style="background-color: #F5EEF8;">Typora
+                        <span class="tag-length">7</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%87%AA%E5%B7%B1/" title="自己: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="自己" style="background-color: #D5F5E3;">自己
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9D%9A%E6%8C%81/" title="坚持: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="坚持" style="background-color: #E8F8F5;">坚持
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%94%9F%E6%B4%BB/" title="生活: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="生活" style="background-color: #FEF9E7;">生活
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/VS-code/" title="VS code: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="VS code" style="background-color: #F8F9F9;">VS code
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Markdown/" title="Markdown: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Markdown" style="background-color: #82E0AA;">Markdown
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81/" title="开源代码: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="开源代码" style="background-color: #D7BDE2;">开源代码
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/auto/" title="auto: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="auto" style="background-color: #A3E4D7;">auto
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" title="开发工具: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="开发工具" style="background-color: #85C1E9;">开发工具
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/socket%E5%87%BD%E6%95%B0/" title="socket函数: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="socket函数" style="background-color: #F8C471;">socket函数
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/TCP%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="TCP客户端/服务器: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="TCP客户端/服务器" style="background-color: #F9E79F;">TCP客户端/服务器
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/ICP/" title="ICP: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="ICP" style="background-color: #FEF9E7;">ICP
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="博客" style="background-color: #F8F9F9;">博客
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%9F%9F%E5%90%8D/" title="域名: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="域名" style="background-color: #F5EEF8;">域名
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/C/" title="C++: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="C++" style="background-color: #85C1E9;">C++
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%A7%84%E5%88%99/" title="C++语言规则: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="C++语言规则" style="background-color: #82E0AA;">C++语言规则
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" title="毕业论文: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="毕业论文" style="background-color: #85C1E9;">毕业论文
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%9F%A5%E9%87%8D/" title="查重: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="查重" style="background-color: #F8C471;">查重
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%8E%92%E7%89%88/" title="排版: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="排版" style="background-color: #FEF9E7;">排版
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AD%94%E8%BE%A9/" title="答辩: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="答辩" style="background-color: #F5EEF8;">答辩
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Github/" title="Github: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Github" style="background-color: #FEF9E7;">Github
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Gitee/" title="Gitee: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Gitee" style="background-color: #F8C471;">Gitee
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%87%8D%E6%96%B0%E5%85%B3%E8%81%94%E8%BF%9C%E7%AB%AF%E5%9C%B0%E5%9D%80/" title="重新关联远端地址: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="重新关联远端地址" style="background-color: #F8C471;">重新关联远端地址
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" title="字符串: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="字符串" style="background-color: #D7BDE2;">字符串
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" title="进制转换: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="进制转换" style="background-color: #82E0AA;">进制转换
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/C/" title="C: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="C" style="background-color: #D5F5E3;">C
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%87%BD%E6%95%B0/" title="函数: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="函数" style="background-color: #E8F8F5;">函数
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="操作系统" style="background-color: #F8F9F9;">操作系统
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/" title="进程和线程: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="进程和线程" style="background-color: #F8C471;">进程和线程
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/" title="虚拟内存: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="虚拟内存" style="background-color: #F9E79F;">虚拟内存
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/STL/" title="STL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="STL" style="background-color: #F8C471;">STL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/STL%E5%90%84%E7%A7%8D%E5%87%BD%E6%95%B0/" title="STL各种函数: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="STL各种函数" style="background-color: #FEF9E7;">STL各种函数
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="客户端/服务器: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="客户端/服务器" style="background-color: #F5EEF8;">客户端/服务器
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/TCP/" title="TCP: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="TCP" style="background-color: #82E0AA;">TCP
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%BF%9B%E7%A8%8B/" title="进程: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="进程" style="background-color: #D7BDE2;">进程
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/" title="僵尸进程: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="僵尸进程" style="background-color: #F8F9F9;">僵尸进程
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B/" title="孤儿进程: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="孤儿进程" style="background-color: #D5F5E3;">孤儿进程
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%9D%A2%E8%AF%95/" title="面试: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="面试" style="background-color: #F9EBEA;">面试
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%8F%98%E9%87%8F/" title="变量: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="变量" style="background-color: #85C1E9;">变量
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/" title="阅读文献: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="阅读文献" style="background-color: #F9EBEA;">阅读文献
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/" title="读论文: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="读论文" style="background-color: #82E0AA;">读论文
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
-    
+</div>
 
     
 
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            
+            <div class="article tag-post col s12 m6 l4" data-tags="ICP, 博客, 域名" data-aos="fade-up">
                 <div class="card">
-                    <a href="/posts/7d63.html">
-                        <div class="card-image">
+                    <a href="/posts/ea98.html">
+                        <div class="card-image tag-image">
                             
                             
-                            <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="详解进程">
+                            <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="ICP备案">
                             
-                            <span class="card-title">详解进程</span>
+                            <span class="card-title">ICP备案</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                详细介绍解析进程，五态图，七态图
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
                             </span>
                             <span class="publish-author">
                                 
@@ -693,306 +896,12 @@
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Typora/">
-                            <span class="chip bg-color">Typora</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%BF%9B%E7%A8%8B/">
-                            <span class="chip bg-color">进程</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B/">
-                            <span class="chip bg-color">僵尸进程</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B/">
-                            <span class="chip bg-color">孤儿进程</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/942c.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="TCP三次握手和四次挥手">
-                            
-                            <span class="card-title">TCP三次握手和四次挥手</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                详细讲述TCP三次握手和四次挥手的整个过程
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-20
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Gavin Pierce
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                            <span class="chip bg-color">客户端/服务器</span>
-                        </a>
-                        
-                        <a href="/tags/TCP/">
-                            <span class="chip bg-color">TCP</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/ab92.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="研究生们高效率看英文文献是怎么看的？">
-                            
-                            <span class="card-title">研究生们高效率看英文文献是怎么看的？</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                研究生/本科生阅读文献
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Gavin Pierce
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%98%85%E8%AF%BB%E6%96%87%E7%8C%AE/">
-                            <span class="chip bg-color">阅读文献</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%AF%BB%E8%AE%BA%E6%96%87/">
-                            <span class="chip bg-color">读论文</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/58fb.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="STL常见用法">
-                            
-                            <span class="card-title">STL常见用法</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                STL中各种函数常见的用法
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-08
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Gavin Pierce
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/C/">
-                            <span class="chip bg-color">C++</span>
-                        </a>
-                        
-                        <a href="/tags/STL/">
-                            <span class="chip bg-color">STL</span>
-                        </a>
-                        
-                        <a href="/tags/STL%E5%90%84%E7%A7%8D%E5%87%BD%E6%95%B0/">
-                            <span class="chip bg-color">STL各种函数</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/abdc.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="操作系统面试题">
-                            
-                            <span class="card-title">操作系统面试题</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                操作系统必备知识
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-05
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Gavin Pierce
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
-                            <span class="chip bg-color">操作系统</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/">
-                            <span class="chip bg-color">进程和线程</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98/">
-                            <span class="chip bg-color">虚拟内存</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/68fc.html">
-                        <div class="card-image">
-                            
-                            
-                            <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="C语言面试">
-                            
-                            <span class="card-title">C语言面试</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                C语言软件工程师推荐
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Gavin Pierce
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/C/">
-                            <span class="chip bg-color">C</span>
-                        </a>
-                        
-                        <a href="/tags/%E9%9D%A2%E8%AF%95/">
-                            <span class="chip bg-color">面试</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%8F%98%E9%87%8F/">
-                            <span class="chip bg-color">变量</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
             
         </div>
     </article>
-
 </main>
-
-
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a class="left btn-floating btn-large disabled">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">1 / 3</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a href="/page/2/"
-               class="right btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
-        </div>
-    </div>
-</div>
 
 
 

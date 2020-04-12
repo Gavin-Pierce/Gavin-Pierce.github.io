@@ -598,7 +598,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    3.1k
                 </div>
                 
 
@@ -621,30 +621,28 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><strong>## socket函数</strong></p>
+                <p><strong>socket函数</strong></p>
 <p>socket函数对应于普通文件的打开操作。普通文件的打开操作返回一个文件描述字，而<code>socket()</code>用于创建一个socket描述符（socket descriptor），它唯一标识一个socket。这个socket描述字跟文件描述字一样，后续的操作都有用到它，把它作为参数，通过它来进行一些读写操作。</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>int socket(int domain, int type, int protocol);</p>
-<p>```</p>
 <p>正如可以给fopen的传入不同参数值，以打开不同的文件。创建socket的时候，也可以指定不同的参数创建不同的socket描述符，socket函数的三个参数分别为：</p>
 <p>- domain：即协议域，又称为协议族（family）。常用的协议族有，AF_INET、AF_INET6、AF_LOCAL（或称AF_UNIX，Unix域socket）、AF_ROUTE等等。协议族决定了socket的地址类型，在通信中必须采用对应的地址，如AF_INET决定了要用ipv4地址（32位的）与端口号（16位的）的组合、AF_UNIX决定了要用一个绝对路径名作为地址。</p>
 <p>- type：指定socket类型。常用的socket类型有，SOCK_STREAM、SOCK_DGRAM、SOCK_RAW、SOCK_PACKET、SOCK_SEQPACKET等等（socket的类型有哪些？）。</p>
 <p>- protocol：顾名思义，就是指定协议。常用的协议有，IPPROTO_TCP、IPPTOTO_UDP、IPPROTO_SCTP、IPPROTO_TIPC等，它们分别对应TCP传输协议、UDP传输协议、STCP传输协议、TIPC传输协议（这个协议我将会单独开篇讨论！）。</p>
 <p>注意：并不是上面的type和protocol可以随意组合的，如SOCK_STREAM不可以跟IPPROTO_UDP组合。当protocol为0时，会自动选择type类型对应的默认协议。</p>
 <p>当我们调用socket创建一个socket时，返回的socket描述字它存在于协议族（address family，AF_XXX）空间中，但没有一个具体的地址。如果想要给它赋值一个地址，就必须调用<code>bind()</code>函数，否则就当调用<code>connect()</code>、<code>listen()</code>时系统会自动随机分配一个端口。</p>
-<p><strong>## bind函数</strong></p>
+<p>** bind函数**</p>
 <p>正如上面所说bind()函数把一个地址族中的特定地址赋给socket。例如对应AF_INET、AF_INET6就是把一个ipv4或ipv6地址和端口号组合赋给socket。</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</p>
-<p>```</p>
 <p>函数的三个参数分别为：</p>
 <p>- sockfd：即socket描述字，它是通过<code>socket()</code>函数创建了，唯一标识一个socket。<code>bind()</code>函数就是将给这个描述字绑定一个名字。</p>
 <p>- addr：一个const struct sockaddr *指针，指向要绑定给sockfd的协议地址。这个地址结构根据地址创建socket时的地址协议族的不同而不同，如ipv4对应的是：</p>
 <p>  cpp</p>
-<p>  ```cpp</p>
-<p>  struct sockaddr_in {</p>
+<hr>
+<p>struct sockaddr_in {</p>
 <p>​    sa_family_t    sin_family; /* address family: AF_INET */</p>
 <p>​    in_port_t      sin_port;   /* port in network byte order */</p>
 <p>​    struct in_addr sin_addr;   /* internet address */</p>
@@ -653,11 +651,10 @@
 <p>  struct in_addr {</p>
 <p>​    uint32_t       s_addr;     /* address in network byte order */</p>
 <p>  };</p>
-<p>  ```</p>
 <p>  ipv6对应的是：</p>
 <p>  cpp</p>
-<p>  ```cpp</p>
-<p>  struct sockaddr_in6 { </p>
+<hr>
+<p>struct sockaddr_in6 { </p>
 <p>​    sa_family_t     sin6_family;   /* AF_INET6 */ </p>
 <p>​    in_port_t       sin6_port;     /* port number */ </p>
 <p>​    uint32_t        sin6_flowinfo; /* IPv6 flow information */ </p>
@@ -667,42 +664,38 @@
 <p>  struct in6_addr { </p>
 <p>​    unsigned char   s6_addr[16];   /* IPv6 address */ </p>
 <p>  };</p>
-<p>  ```</p>
 <p>  Unix域对应的是：</p>
 <p>  cpp</p>
-<p>  ```cpp</p>
-<p>  #define UNIX_PATH_MAX    108</p>
+<hr>
+<p>#define UNIX_PATH_MAX    108</p>
 <p>  struct sockaddr_un { </p>
 <p>​    sa_family_t sun_family;               /* AF_UNIX */ </p>
 <p>​    char        sun_path[UNIX_PATH_MAX];  /* pathname */ </p>
 <p>  };</p>
-<p>  ```</p>
 <p>- addrlen：对应的是地址的长度。</p>
 <p>通常服务器在启动的时候都会绑定一个众所周知的地址（如ip地址+端口号），用于提供服务，客户就可以通过它来接连服务器；而客户端就不用指定，有系统自动分配一个端口号和自身的ip地址组合。这就是为什么通常服务器端在listen之前会调用<code>bind()</code>，而客户端就不会调用，而是在<code>connect()</code>时由系统随机生成一个。</p>
 <p>&gt; 网络字节序与主机字节序</p>
-<p>&gt; <strong><em>\</em>主机字节序**</strong>就是我们平常说的大端和小端模式：不同的CPU有不同的字节序类型，这些字节序是指整数在内存中保存的顺序，这个叫做主机序。引用标准的Big-Endian和Little-Endian的定义如下：</p>
+<p>&gt; <strong>主机字节序</strong>就是我们平常说的大端和小端模式：不同的CPU有不同的字节序类型，这些字节序是指整数在内存中保存的顺序，这个叫做主机序。引用标准的Big-Endian和Little-Endian的定义如下：</p>
 <p>&gt; a) Little-Endian就是低位字节排放在内存的低地址端，高位字节排放在内存的高地址端。</p>
 <p>&gt; b) Big-Endian就是高位字节排放在内存的低地址端，低位字节排放在内存的高地址端。</p>
-<p>&gt; <strong><em>\</em>网络字节序**</strong>：4个字节的32 bit值以下面的次序传输：首先是0～7bit，其次8～15bit，然后16～23bit，最后是24~31bit。这种传输次序称作大端字节序。<strong><em>\</em>由于TCP/IP首部中所有的二进制整数在网络中传输时都要求以这种次序，因此它又称作网络字节序。**</strong>字节序，顾名思义字节的顺序，就是大于一个字节类型的数据在内存中的存放顺序，一个字节的数据没有顺序的问题了。</p>
-<p>&gt; <strong><em>\</em>所以**</strong>：在将一个地址绑定到socket的时候，请先将主机字节序转换成为网络字节序，而不要假定主机字节序跟网络字节序一样使用的是Big-Endian。由于这个问题曾引发过血案！公司项目代码中由于存在这个问题，导致了很多莫名其妙的问题，所以请谨记对主机字节序不要做任何假定，务必将其转化为网络字节序再赋给socket。</p>
-<p><strong>## listen函数、connect函数</strong></p>
+<p>&gt; <strong>网络字节序</strong>：4个字节的32 bit值以下面的次序传输：首先是0～7bit，其次8～15bit，然后16～23bit，最后是24~31bit。这种传输次序称作大端字节序。<strong><em>\</em>由于TCP/IP首部中所有的二进制整数在网络中传输时都要求以这种次序，因此它又称作网络字节序。**</strong>字节序，顾名思义字节的顺序，就是大于一个字节类型的数据在内存中的存放顺序，一个字节的数据没有顺序的问题了。</p>
+<p>&gt; <strong>所以</strong>：在将一个地址绑定到socket的时候，请先将主机字节序转换成为网络字节序，而不要假定主机字节序跟网络字节序一样使用的是Big-Endian。由于这个问题曾引发过血案！公司项目代码中由于存在这个问题，导致了很多莫名其妙的问题，所以请谨记对主机字节序不要做任何假定，务必将其转化为网络字节序再赋给socket。</p>
+<p><strong>listen函数、connect函数</strong></p>
 <p>如果作为一个服务器，在调用<code>socket()</code>、<code>bind()</code>之后就会调用<code>listen()</code>来监听这个socket，如果客户端这时调用<code>connect()</code>发出连接请求，服务器端就会接收到这个请求。</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>int listen(int sockfd, int backlog);</p>
 <p>int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);</p>
-<p>```</p>
 <p>listen函数的第一个参数即为要监听的socket描述字，第二个参数为相应socket可以排队的最大连接个数。socket()函数创建的socket默认是一个主动类型的，listen函数将socket变为被动类型的，等待客户的连接请求。</p>
 <p>connect函数的第一个参数即为客户端的socket描述字，第二参数为服务器的socket地址，第三个参数为socket地址的长度。客户端通过调用connect函数来建立与TCP服务器的连接。</p>
-<p><strong>## accept函数</strong></p>
+<p>** accept函数**</p>
 <p>TCP服务器端依次调用<code>socket()</code>、<code>bind()</code>、<code>listen()</code>之后，就会监听指定的socket地址了。TCP客户端依次调用<code>socket()</code>、<code>connect()</code>之后就想TCP服务器发送了一个连接请求。TCP服务器监听到这个请求之后，就会调用<code>accept()</code>函数取接收请求，这样连接就建立好了。之后就可以开始网络I/O操作了，即类同于普通文件的读写I/O操作。</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen);</p>
-<p>```</p>
 <p>accept函数的第一个参数为服务器的socket描述字，第二个参数为指向struct sockaddr *的指针，用于返回客户端的协议地址，第三个参数为协议地址的长度。如果accpet成功，那么其返回值是由内核自动生成的一个全新的描述字，代表与返回客户的TCP连接。</p>
-<p><strong><em>\</em>注意**</strong>：accept的第一个参数为服务器的socket描述字，是服务器开始调用socket()函数生成的，称为<strong><em>\</em>监听socket描述字**</strong>；而accept函数返回的是已连接的socket描述字。一个服务器通常通常仅仅只创建一个监听socket描述字，它在该服务器的生命周期内一直存在。内核为每个由服务器进程接受的客户连接创建了一个<strong><em>\</em>已连接socket描述字**</strong>，当服务器完成了对某个客户的服务，相应的已连接socket描述字就被关闭</p>
-<p><strong>## read函数、write函数</strong></p>
+<p><strong>注意</strong>：accept的第一个参数为服务器的socket描述字，是服务器开始调用socket()函数生成的，称为<strong><em>\</em>监听socket描述字；而accept函数返回的是已连接的socket描述字。一个服务器通常通常仅仅只创建一个监听socket描述字，它在该服务器的生命周期内一直存在。内核为每个由服务器进程接受的客户连接创建了一个*</strong>*已连接socket描述字****，当服务器完成了对某个客户的服务，相应的已连接socket描述字就被关闭</p>
+<p><strong>read函数、write函数</strong></p>
 <p>万事具备只欠东风，至此服务器与客户已经建立好连接了。可以调用网络I/O进行读写操作了，即实现了网咯中不同进程之间的通信！网络I/O操作有下面几组：</p>
 <p>- <code>read()</code>/<code>write()</code></p>
 <p>- <code>recv()</code>/<code>send()</code></p>
@@ -711,7 +704,7 @@
 <p>- <code>recvfrom()</code>/<code>sendto()</code></p>
 <p>它们的声明如下：</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>#include &lt;unistd.h&gt;</p>
 <p>ssize_t read(int fd, void *buf, size_t count);</p>
 <p>ssize_t write(int fd, const void *buf, size_t count);</p>
@@ -725,19 +718,17 @@
 <p>​                        struct sockaddr *src_addr, socklen_t *addrlen);</p>
 <p>ssize_t sendmsg(int sockfd, const struct msghdr *msg, int flags);</p>
 <p>ssize_t recvmsg(int sockfd, struct msghdr *msg, int flags);</p>
-<p>```</p>
 <p>read函数是负责从fd中读取内容.当读成功时，read返回实际所读的字节数，如果返回的值是0表示已经读到文件的结束了，小于0表示出现了错误。如果错误为EINTR说明读是由中断引起的，如果是ECONNREST表示网络连接出了问题。</p>
 <p>write函数将buf中的nbytes字节内容写入文件描述符fd.成功时返回写的字节数。失败时返回-1，并设置errno变量。在网络程序中，当我们向套接字文件描述符写时有俩种可能。1)write的返回值大于0，表示写了部分或者是全部的数据。2)返回的值小于0，此时出现了错误。我们要根据错误类型来处理。如果错误为EINTR表示在写的时候出现了中断错误。如果为EPIPE表示网络连接出现了问题(对方已经关闭了连接)。</p>
-<p><strong>## close函数</strong></p>
+<p><strong>close函数</strong></p>
 <p>在服务器与客户端建立连接之后，会进行一些读写操作，完成了读写操作就要关闭相应的socket描述字，好比操作完打开的文件要调用fclose关闭打开的文件。</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>#include &lt;unistd.h&gt;</p>
 <p>int close(int fd);</p>
-<p>```</p>
 <p>close一个TCP socket的缺省行为时把该socket标记为以关闭，然后立即返回到调用进程。该描述字不能再由调用进程使用，也就是说不能再作为read或write的第一个参数。</p>
 <p>注意：close操作只是使相应socket描述字的引用计数-1，只有当引用计数为0的时候，才会触发TCP客户端向服务器发送终止连接请求。</p>
-<p><strong>## 使用Socket API建立简易TCP服务器</strong></p>
+<p><strong>使用Socket API建立简易TCP服务器</strong></p>
 <p>\1. 建立一个Socket</p>
 <p>\2. 绑定接受客户端连接的端口 bind</p>
 <p>\3. 监听网络端口 listen</p>
@@ -745,7 +736,7 @@
 <p>\5. 向客户端发送一条数据 send</p>
 <p>\6. 关闭Socket closesocket</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>#define WIN32_LEAN_AND_MEAN</p>
 <p>#define _WINSOCK_DEPRECATED_NO_WARNINGS</p>
 <p>#include&lt;Windows.h&gt;</p>
@@ -757,7 +748,6 @@
 <p>​    WORD ver = MAKEWORD(2, 2);</p>
 <p>​    WSADATA dat;</p>
 <p>​    WSAStartup(ver, &amp;dat);</p>
-<p>​    //—————-</p>
 <p>​    // 1 建立一个Socket 套接字</p>
 <p>​    SOCKET _sock = socket(AF_INET, SOCK_STREAM,IPPROTO_TCP);</p>
 <p>​    if (INVALID_SOCKET == _sock) {</p>
@@ -806,14 +796,13 @@
 <p>​    WSACleanup();</p>
 <p>​    return 0;</p>
 <p>}</p>
-<p>```</p>
-<p><strong>## 使用Socket API建立简易TCP客户端</strong></p>
+<p><strong>使用Socket API建立简易TCP客户端</strong></p>
 <p>\1. 建立一个Socket</p>
 <p>\2. connect 连接服务器</p>
 <p>\3. recv 接收服务器信息</p>
 <p>\4. 关闭Socket closesocket</p>
 <p>cpp</p>
-<p>```cpp</p>
+<hr>
 <p>#define WIN32_LEAN_AND_MEAN</p>
 <p>#include&lt;Windows.h&gt;</p>
 <p>#include&lt;WinSock2.h&gt;</p>
@@ -860,7 +849,6 @@
 <p>​    getchar();</p>
 <p>​    return 0;</p>
 <p>}</p>
-<p>```</p>
 <p><strong>## 运行效果</strong></p>
 <p><img src="./1.gif" data-original="https://tvax4.sinaimg.cn/large/005JD0Ejgy1gcdoxi7loej30pv0fpdgm.jpg" alt="服务端"></p>
 <p><strong><em>\</em>服务端**</strong></p>
@@ -1120,19 +1108,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/f5b7.html">
+                <a href="/posts/ea98.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="TCP传输协议">
+                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="ICP备案">
                         
-                        <span class="card-title">TCP传输协议</span>
+                        <span class="card-title">ICP备案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            讲述TCP三次握手和四次挥手
+                            ICP备案经历的事情
                         
                     </div>
                     <div class="publish-info">
@@ -1150,16 +1138,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/ICP/">
+                        <span class="chip bg-color">ICP</span>
                     </a>
                     
-                    <a href="/tags/TCP%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE/">
-                        <span class="chip bg-color">TCP握手协议</span>
+                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">博客</span>
                     </a>
                     
-                    <a href="/tags/%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-                        <span class="chip bg-color">客户端/服务器</span>
+                    <a href="/tags/%E5%9F%9F%E5%90%8D/">
+                        <span class="chip bg-color">域名</span>
                     </a>
                     
                 </div>
@@ -1430,7 +1418,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">36.8k</span>&nbsp;字
+                class="white-color">39k</span>&nbsp;字
             
             
             
