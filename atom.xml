@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-04-12T10:09:57.831Z</updated>
+  <updated>2020-04-26T13:30:12.598Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>是时候深入理解栈</title>
+    <link href="https://www.xutguanpo.cn/posts/dff.html"/>
+    <id>https://www.xutguanpo.cn/posts/dff.html</id>
+    <published>2020-04-25T16:00:00.000Z</published>
+    <updated>2020-04-26T13:30:12.598Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;啥是栈&quot;&gt;&lt;a href=&quot;#啥是栈&quot; class=&quot;headerlink&quot; title=&quot;啥是栈&quot;&gt;&lt;/a&gt;啥是栈&lt;/h1&gt;&lt;p&gt;先来看一段动画：&lt;video width=&quot;720&quot; height=&quot;480&quot; controls=&quot;controls&quot;&gt; 
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
+      <category term="栈" scheme="https://www.xutguanpo.cn/tags/%E6%A0%88/"/>
+    
+      <category term="C语言" scheme="https://www.xutguanpo.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+      <category term="压栈/弹栈" scheme="https://www.xutguanpo.cn/tags/%E5%8E%8B%E6%A0%88-%E5%BC%B9%E6%A0%88/"/>
+    
+  </entry>
   
   <entry>
     <title>详解进程</title>
