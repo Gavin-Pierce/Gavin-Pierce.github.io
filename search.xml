@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>计网 IP 知识全家桶，45 张图一套带走（一）</title>
+      <link href="/posts/a9f7.html"/>
+      <url>/posts/a9f7.html</url>
+      
+        <content type="html"><![CDATA[<p>以下文章来源于互联网，本作者精心整理</p><h2 id="前-言"><a href="#前-言" class="headerlink" title="前 言"></a>前 言</h2><p>前段时间，有读者希望发一篇关于 IP 分类地址、子网划分等的文章，反馈常常混淆，摸不着头脑。</p><p>那么，说来就来！而且要盘就盘全一点，所以就来个 <strong>IP 基础知识全家桶</strong>。</p><p>吃完这个 IP 基础知识全家桶全家桶，包你撑着肚子喊出：“<strong>真香！</strong>”</p><p>不多说，直接上菜，共分为<strong>三道菜</strong>：</p><ul><li>首先是前菜 「 IP 基本认识 」</li><li>其次是主菜 「IP 地址的基础知识」</li><li>最后是点心 「IP 协议相关技术」</li></ul><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/001.jpg" alt=""></p><h2 id="正-文"><a href="#正-文" class="headerlink" title="正 文"></a>正 文</h2><h3 id="前菜-——-IP-基本认识"><a href="#前菜-——-IP-基本认识" class="headerlink" title="前菜 —— IP 基本认识"></a>前菜 —— IP 基本认识</h3><p>IP 在 TCP/IP 参考模型中处于第三层，也就是<strong>网络层</strong>。</p><p>网络层的主要作用是：<strong>实现主机与主机之间的通信，也叫点对点（end to end）通信。</strong></p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/002.jpg" alt=""></p><blockquote><p>网络层与数据链路层有什么关系呢？</p></blockquote><p>有的小伙伴分不清 IP（网络层） 和 MAC （数据链路层）之间的区别和关系。</p><p>其实很容易区分，在上面我们知道 IP 的作用是主机之间通信中的，而 <strong>MAC 的作用则是实现「直连」的两个设备之间通信，而 IP 则负责在「没有直连」的两个网络之间进行通信传输。</strong></p><p>举个生活的栗子，小林要去一个很远的地方旅行，制定了一个行程表，其间需先后乘坐飞机、地铁、公交车才能抵达目的地，为此小林需要买飞机票，地铁票等。</p><p>飞机票和地铁票都是去往特定的地点的，每张票只能够在某一限定区间内移动，此处的「区间内」就如同通信网络中数据链路。</p><p>在区间内移动相当于数据链路层，充当区间内两个节点传输的功能，区间内的出发点好比源 MAC 地址，目标地点好比目的 MAC 地址。</p><p>整个旅游行程表就相当于网络层，充当远程定位的功能，行程的开始好比源 IP，行程的终点好比目的 IP 地址。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/003.jpg" alt=""></p><p>如果小林只有行程表而没有车票，就无法搭乘交通工具到达目的地。相反，如果除了车票而没有行程表，恐怕也很难到达目的地。因为小林不知道该坐什么车，也不知道该在哪里换乘。</p><p>因此，只有两者兼备，既有某个区间的车票又有整个旅行的行程表，才能保证到达目的地。与此类似，<strong>计算机网络中也需要「数据链路层」和「网络层」这个分层才能实现向最终目标地址的通信。</strong></p><p>还有重要一点，旅行途中我们虽然不断变化了交通工具，但是旅行行程的起始地址和目的地址始终都没变。其实，在网络中数据包传输中也是如此，<strong>源IP地址和目标IP地址在传输过程中是不会变化的，只有源 MAC 地址和目标 MAC 一直在变化。</strong></p><h3 id="主菜-——-IP-地址的基础知识"><a href="#主菜-——-IP-地址的基础知识" class="headerlink" title="主菜 —— IP 地址的基础知识"></a>主菜 —— IP 地址的基础知识</h3><p>在 TCP/IP 网络通信时，为了保证能正常通信，每个设备都需要配置正确的 IP 地址，否则无法实现正常的通信。</p><p>IP 地址（IPv4 地址）由 <code>32</code> 位正整数来表示，IP 地址在计算机是以二进制的方式处理的。</p><p>而人类为了方便记忆采用了<strong>点分十进制</strong>的标记方式，也就是将 32 位 IP 地址以每 8 位为组，共分为 <code>4</code> 组，每组以「<code>.</code>」隔开，再将每组转换成十进制。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/004.png" alt=""></p><p>那么，IP 地址最大值也就是</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/4.png" alt=""></p><p>也就说，最大允许 43 亿台计算机连接到网络。</p><p>实际上，IP 地址并不是根据主机台数来配置的，而是以网卡。像服务器、路由器等设备都是有 2 个以上的网卡，也就是它们会有 2 个以上的 IP 地址。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/005.png" alt=""></p><p>因此，让 43 亿台计算机全部连网其实是不可能的，更何况 IP 地址是由「网络标识」和「主机标识」这两个部分组成的，所以实际能够连接到网络的计算机个数更是少了很多。</p><blockquote><p>可能有的小伙伴提出了疑问，现在不仅电脑配了 IP， 手机、IPad 等电子设备都配了 IP 呀，照理来说肯定会超过 43 亿啦，那是怎么能够支持这么多 IP 的呢？</p></blockquote><p>因为会根据一种可以更换 IP 地址的技术 <code>NAT</code>，使得可连接计算机数超过 43 亿台。<code>NAT</code> 技术后续会进一步讨论和说明。</p><h4 id="IP-地址的分类"><a href="#IP-地址的分类" class="headerlink" title="IP 地址的分类"></a>IP 地址的分类</h4><p>互联网诞生之初，IP 地址显得很充裕，于是计算机科学家们设计了<strong>分类地址</strong>。</p><p>IP 地址分类成了 5 种类型，分别是 A 类、B 类、C 类、D 类、E 类。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/006.jpg" alt=""></p><p>上图中黄色部是分类号，用以区分 IP 地址类别。</p><blockquote><p>什么是 A、B、C 类地址？</p></blockquote><p>其中对于 A、B、C 类主要分为两个部分，分别是<strong>网络号和主机号</strong>。这很好理解，好比小林是 A 小区 1 栋 101 号，你是 B 小区 1 栋 101 号。</p><p>我们可以用下面这个表格， 就能很清楚的知道 A、B、C 分类对应的地址范围、最大主机个数。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/007.jpg" alt=""></p><blockquote><p>A、B、C 分类地址最大主机个数是如何计算的呢？</p></blockquote><p>最大主机个数，就是要看主机号的位数，如 C 类地址的主机号占 8 位，那么 C 类地址的最大主机个数：</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/008.jpg" alt=""></p><p>为什么要减 2 呢？</p><p>因为在 IP 地址中，有两个 IP 是特殊的，分别是主机号全为 1 和 全为 0 地址。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/008.png" alt=""></p><ul><li>主机号全为 1 指定某个网络下的所有主机，用于广播</li><li>主机号全为 0 指定某个网络</li></ul><p>因此，在分配过程中，应该去掉这两种情况。</p><blockquote><p>广播地址用于什么？</p></blockquote><p>广播地址用于在<strong>同一个链路中相互连接的主机之间发送数据包</strong>。</p><p>学校班级中就有广播的例子，在准备上课的时候，通常班长会喊：“上课， 全体起立！”，班里的同学听到这句话是不是全部都站起来了？这个句话就有广播的含义。</p><p>当主机号全为 1 时，就表示该网络的广播地址。例如把 <code>172.20.0.0/16</code> 用二进制表示如下：</p><p>10101100.00010100.00000000.00000000</p><p>将这个地址的<strong>主机部分全部改为 1</strong>，则形成广播地址：</p><p>10101100.00010100.<strong>11111111.11111111</strong></p><p>再将这个地址用十进制表示，则为 <code>172.20.255.255</code>。</p><p>广播地址可以分为本地广播和直接广播两种。</p><ul><li><strong>在本网络内广播的叫做本地广播</strong>。例如网络地址为 192.168.0.0/24 的情况下，广播地址是 192.168.0.255 。因为这个广播地址的 IP 包会被路由器屏蔽，所以不会到达 192.168.0.0/24 以外的其他链路上。</li><li><strong>在不同网络之间的广播叫做直接广播</strong>。例如网络地址为 192.168.0.0/24 的主机向 192.168.1.255/24 的目标地址发送 IP 包。收到这个包的路由器，将数据转发给192.168.1.0/24，从而使得所有 192.168.1.1~192.168.1.254 的主机都能收到这个包（由于直接广播有一定的安全问题，多数情况下会在路由器上设置为不转发）。</li></ul><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0009.jpg" alt=""></p><blockquote><p>什么是 D、E 类地址？</p></blockquote><p>而 D 类和 E 类地址是没有主机号的，所以不可用于主机 IP，D 类常被用于<strong>多播</strong>，E 类是预留的分类，暂时未使用。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/009.png" alt=""></p><blockquote><p>多播地址用于什么？</p></blockquote><p>多播用于<strong>将包发送给特定组内的所有主机。</strong></p><p>还是举班级的栗子，老师说：“最后一排的同学，上来做这道数学题。”，老师是指定的是最后一排的同学，也就是多播的含义了。</p><p>由于广播无法穿透路由，若想给其他网段发送同样的包，就可以使用可以穿透路由的多播（组播）。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0010.jpg" alt=""></p><p>多播使用的 D 类地址，其前四位是 <code>1110</code> 就表示是多播地址，而剩下的 28 位是多播的组编号。</p><p>从 224.0.0.0 ~ 239.255.255.255 都是多播的可用范围，其划分为以下三类：</p><ul><li>224.0.0.0 ~ 224.0.0.255 为预留的组播地址，只能局域网中，路由器是不会进行转发的</li><li>224.0.1.0 ~ 238.255.255.255  为用户可用的组播地址，可以用于 Internet 上</li><li>239.0.0.0 ~ 239.255.255.255 为本地管理组播地址，可供内部网在内部使用，仅在特定的本地范围内有效</li></ul><blockquote><p>IP 分类的优点</p></blockquote><p>不管是路由器还是主机解析到一个 IP 地址时候，我们判断其 IP 地址的首位是否为 0，为 0 则为 A 类地址，那么就能很快的找出网络地址和主机地址。</p><p>其余分类判断方式参考如下图：</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0011.png" alt=""></p><p>所以，这种分类地址的优点就是<strong>简单明了、选路（基于网络地址）简单</strong>。</p><blockquote><p>IP 分类的缺点</p></blockquote><p><em>缺点一</em></p><p><strong>同一网络下没有地址层次</strong>，比如一个公司里用了 B 类地址，但是可能需要根据生产环境、测试环境、开发环境来划分地址层次，而这种 IP 分类是没有地址层次划分的功能，所以这就<strong>缺少地址的灵活性</strong>。</p><p><em>缺点二</em></p><p>A、B、C类有个尴尬处境，就是<strong>不能很好的与现实网络匹配</strong>。</p><ul><li>C 类地址能包含的最大主机数量实在太少了，只有 254 个，估计一个网吧都不够用。</li><li>而 B 类地址能包含的最大主机数量又太多了，6 万多台机器放在一个网络下面，一般的企业基本达不到这个规模，闲着的地址就是浪费。</li></ul><p>这两个缺点，都可以在 <code>CIDR</code> 无分类地址解决。</p><h4 id="无分类地址-CIDR"><a href="#无分类地址-CIDR" class="headerlink" title="无分类地址 CIDR"></a>无分类地址 CIDR</h4><p>正因为 IP 分类存在许多缺点，所有后面提出了无分类地址的方案，即 <code>CIDR</code>。</p><p>这种方式不再有分类地址的概念，32 比特的 IP 地址被划分为两部分，前面是<strong>网络号</strong>，后面是<strong>主机号</strong>。</p><blockquote><p>怎么划分网络号和主机号的呢？</p></blockquote><p>表示形式 <code>a.b.c.d/x</code>，其中 <code>/x</code> 表示前 x 位属于<strong>网络号</strong>， x 的范围是 <code>0 ~ 32</code>，这就使得 IP 地址更加具有灵活性。</p><p>比如 10.100.122.2/24，这种地址表示形式就是 CIDR，<code>/24</code> 表示前 24 位是网络号，剩余的 8 位是主机号。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0012.png" alt=""></p><p>还有另一种划分网络号与主机号形式，那就是<strong>子网掩码</strong>，掩码的意思就是掩盖掉主机号，剩余的就是网络号。</p><p><strong>将子网掩码和 IP 地址按位计算 AND，就可得到网络号。</strong></p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0013.png" alt=""></p><blockquote><p>为什么要分离网络号和主机号？</p></blockquote><p>因为两台计算机要通讯，首先要判断是否处于同一个广播域内，即网络地址是否相同。如果网络地址相同，表明接受方在本网络上，那么可以把数据包直接发送到目标主机，</p><p>路由器寻址工作中，也就是通过这样的方式来找到对应的网络号的，进而把数据包转发给对应的网络内。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0013.jpg" alt=""></p><blockquote><p>怎么进行子网划分？</p></blockquote><p>在上面我们知道可以通过子网掩码划分出网络号和主机号，那实际上子网掩码还有一个作用，那就是<strong>划分子网</strong>。</p><p><strong>子网划分实际上是将主机地址分为两个部分：子网网络地址和子网主机地址</strong>。形式如下：</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0014.png" alt=""></p><ul><li>未做子网划分的 ip 地址：网络地址＋主机地址</li><li>做子网划分后的 ip 地址：网络地址＋（子网网络地址＋子网主机地址）</li></ul><p>假设对 C 类地址进行子网划分，网络地址 192.168.1.0，使用子网掩码 255.255.255.192 对其进行子网划分。</p><p>C 类地址中前 24 位 是网络号，最后 8 位是主机号，根据子网掩码可知<strong>从 8 位主机号中借用 2 位作为子网号</strong>。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0015.png" alt=""></p><p>由于子网网络地址被划分成 2 位，那么子网地址就有 4 个，分别是 00、01、10、11，具体划分如下图：</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0016.jpg" alt=""></p><p>划分后的 4 个子网如下表格：</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0017.jpg" alt=""></p><h4 id="公有-IP-地址与私有-IP-地址"><a href="#公有-IP-地址与私有-IP-地址" class="headerlink" title="公有 IP 地址与私有 IP 地址"></a>公有 IP 地址与私有 IP 地址</h4><p>在 A、B、C 分类地址，实际上有分公有 IP 地址和 私有 IP 地址。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0018.jpg" alt=""></p><p>平时我们办公室、家里、学校用的 IP 地址，一般都是私有 IP 地址。因为这些地址允许组织内部的 IT 人员自己管理、自己分配，而且可以重复。因此，你学校的某个私有 IP 地址和我学校的可以是一样的。</p><p>就像每个小区都有自己的楼编号和门牌号，你小区家可以叫  1 栋 101 号，我小区家也可以叫 1 栋 101，没有任何问题。但一旦出了小区，就需要带上中山路 666 号（公网 IP 地址），是国家统一分配的，不能两个小区都叫中山路 666。</p><p>所以，公有 IP 地址是有个组织统一分配的，假设你要开一个博客网站，那么你就需要去申请购买一个公有 IP，这样全世界的人才能访问。并且公有 IP 地址基本上要在整个互联网范围内保持唯一。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0019.jpg" alt=""></p><blockquote><p>公有 IP 地址由谁管理呢？</p></blockquote><p>私有 IP 地址通常是内部的 IT 人员值管理，公有 IP 地址是由 <code>ICANN</code> 组织管理，中文叫「互联网名称与数字地址分配机构」。</p><p>IANA 是 ICANN 的其中一个机构，它负责分配互联网 IP 地址，是按州的方式层层分配。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0020.jpg" alt=""></p><ul><li>ARIN 北美地区</li><li>LACNIC 拉丁美洲和一些加勒比群岛</li><li>RIPE NCC 欧洲、中东和中亚</li><li>AfriNIC 非洲地区</li><li>APNIC 亚太地区</li></ul><p>其中，在中国是由 CNNIC 的机构进行管理，它是中国国内唯一指定的全局 IP 地址管理的组织。</p><h4 id="IP-地址与路由控制"><a href="#IP-地址与路由控制" class="headerlink" title="IP 地址与路由控制"></a>IP 地址与路由控制</h4><p>IP地址的<strong>网络地址</strong>这一部分是用于进行路由控制。</p><p>路由控制表中记录着网络地址与下一步应该发送至路由器的地址，在主机和路由器上都会有各自的路由器控制表。</p><p>在发送 IP 包时，首先要确定 IP 包首部中的目标地址，再从路由控制表中找到与该地址具有<strong>相同网络地址</strong>的记录，根据该记录将 IP 包转发给相应的下一个路由器。如果路由控制表中存在多条相同网络地址的记录，就选择相同位数最多的网络地址，也就是最长匹配。</p><p>下面以下图的网络链路作为例子说明：</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0021.jpg" alt=""></p><ol><li>主机 A 要发送一个 IP 包，其源地址是 <code>10.1.1.30</code> 和目标地址是 <code>10.1.2.10</code>，由于没有在主机 A 的路由表找到与目标地址 <code>10.1.2.10</code> 的网络地址，于是把包被转发到默认路由（路由器 <code>1</code> ）</li><li>路由器 <code>1</code> 收到 IP 包后，也在路由器 <code>1</code> 的路由表匹配与目标地址相同的网络地址记录，发现匹配到了，于是就把 IP 数据包转发到了 <code>10.1.0.2</code> 这台路由器 <code>2</code></li><li>路由器 <code>2</code> 收到后，同样对比自身的路由表，发现匹配到了，于是把 IP 包从路由器 <code>2</code> 的 <code>10.1.2.1</code> 这个接口出去，最终经过交换机把 IP 数据包转发到了目标主机</li></ol><blockquote><p>环回地址是不会流向网络</p></blockquote><p>环回地址是在同一台计算机上的程序之间进行网络通信时所使用的一个默认地址。</p><p>计算机使用一个特殊的 IP 地址 <strong>127.0.0.1 作为环回地址，</strong>与该地址具有相同意义的是一个叫做 <code>localhost</code> 的主机名。</p><p>使用这个 IP 或主机名时，数据包不会流向网络。</p><h4 id="IP-分片与重组"><a href="#IP-分片与重组" class="headerlink" title="IP 分片与重组"></a>IP 分片与重组</h4><p>每种数据链路的最大传输单元 <code>MTU</code> 都是不相同的，如 FDDI 数据链路 MTU 4352、以太网的 MTU 是 1500 字节等。</p><p>每种数据链路的 MTU 之所以不同，是因为每个不同类型的数据链路的使用目的不同。使用目的不同，可承载的 MTU 也就不同。</p><p>其中，我们最常见数据链路是以太网，它的 MTU 是 <code>1500</code> 字节。</p><p>那么当 IP 数据包大小大于 MTU 时， IP 数据包就会被分片。</p><p>经过分片之后的 IP 数据报在被重组的时候，只能由目标主机进行，路由器是不会进行重组的。</p><p>假设发送方发送一个 4000 字节的大数据报，若要传输在以太网链路，则需要把数据报分片成 3 个小数据报进行传输，再交由接收方重组成大数据报。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0023.png" alt=""></p><p>在分片传输中，一旦某个分片丢失，则会造成整个 IP 数据报作废，所以 TCP 引入了 <code>MSS</code> 也就是在 TCP 层进行分片不由 IP 层分片，那么对于 UDP 我们尽量不要发送一个大于 <code>MTU</code> 的数据报文。</p><h4 id="IPv6-基本认识"><a href="#IPv6-基本认识" class="headerlink" title="IPv6 基本认识"></a>IPv6 基本认识</h4><p>IPv4 的地址是 32 位的，大约可以提供 42 亿个地址，但是早在 2011 年 IPv4 地址就已经被分配完了。</p><p>但是 IPv6 的地址是 <code>128</code> 位的，这可分配的地址数量是大的惊人，说个段子 <strong>IPv6 可以保证地球上的每粒沙子都能被分配到一个 IP 地址。</strong></p><p>但 IPv6 除了有更多的地址之外，还有更好的安全性和扩展性，说简单点就是 IPv6 相比于 IPv4 能带来更好的网络体验。</p><p>但是因为 IPv4 和 IPv6 不能相互兼容，所以不但要我们电脑、手机之类的设备支持，还需要网络运营商对现有的设备进行升级，所以这可能是 IPv6 普及率比较慢的一个原因。</p><blockquote><p>IPv6 的亮点</p></blockquote><p>IPv6 不仅仅只是可分配的地址变多了，他还有非常多的亮点。</p><ul><li>IPv6 可自动配置，即使没有 DHCP 服务器也可以实现自动分配IP地址，真是<strong>便捷到即插即用</strong>啊。</li><li>IPv6 包头包首部长度采用固定的值 <code>40</code> 字节，去掉了包头校验和，简化了首部结构，减轻了路由器负荷，大大<strong>提高了传输的性能</strong>。</li><li>IPv6 有应对伪造 IP 地址的网络安全功能以及防止线路窃听的功能，大大<strong>提升了安全性</strong>。</li><li><strong>…</strong> （由你发现更多的亮点）</li></ul><blockquote><p>IPv6 地址的标识方法</p></blockquote><p>IPv4 地址长度共 32 位，是以每 8 位作为一组，并用点分十进制的表示方式。</p><p>IPv6 地址长度是 128 位，是以每 16 位作为一组，每组用冒号 「:」 隔开。</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0024.png" alt=""></p><p>如果出现连续的 0 时还可以将这些 0 省略，并用两个冒号 「::」隔开。但是，一个 IP 地址中只允许出现一次两个连续的冒号。</p><blockquote><p>IPv6 地址的结构</p></blockquote><p>IPv6 类似 IPv4，也是通过 IP 地址的前几位标识 IP 地址的种类。</p><p>IPv6 的地址主要有一下类型地址：</p><ul><li>单播地址，用于一对一的通信</li><li>组播地址，用于一对多的通信</li><li>任播地址，用于通信最近的节点，最近的节点是由路由协议决定</li><li>没有广播地址</li></ul><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0053.jpg" alt=""></p><blockquote><p>IPv6 单播地址类型</p></blockquote><p>对于一对一通信的 IPv6 地址，主要划分了三类单播地址，每类地址的有效范围都不同。</p><ul><li>在同一链路单播通信，不经过路由器，可以使用<strong>链路本地单播地址</strong>，IPv4 没有此类型</li><li>在内网里单播通信，可以使用<strong>唯一本地地址</strong>，相当于 IPv4 的私有 IP</li><li>在互联网通信，可以使用<strong>全局单播地址</strong>，相当于 IPv4 的公有 IP</li></ul><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0051.jpg" alt=""></p><h4 id="IPv4-首部与-IPv6-首部"><a href="#IPv4-首部与-IPv6-首部" class="headerlink" title="IPv4 首部与 IPv6 首部"></a>IPv4 首部与 IPv6 首部</h4><p>IPv4 首部与 IPv6 首部的差异如下图：</p><p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/0054.jpg" alt=""></p><p>IPv6 相比 IPv4 的首部改进：</p><ul><li><strong>取消了首部校验和字段。</strong> 因为在数据链路层和传输层都会校验，因此 IPv6 直接取消了 IP 的校验。</li><li><strong>取消了分片/重新组装相关字段。</strong> 分片与重组是耗时的过程，IPv6 不允许在中间路由器进行分片与重组，这种操作只能在源与目标主机，这将大大提高了路由器转发的速度。</li><li><strong>取消选项字段。</strong> 选项字段不再是标准 IP 首部的一部分了，但它并没有消失，而是可能出现在 IPv6 首部中的「下一个首部」指出的位置上。删除该选项字段是的 IPv6 的首部成为固定长度的 <code>40</code> 字节。</li></ul><p>下篇文章接着叙述</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> IP协议 </tag>
+            
+            <tag> IPv4/IPv6 </tag>
+            
+            <tag> IGMP </tag>
+            
+            <tag> 网络通信 </tag>
+            
+            <tag> 互联网相关的知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>是时候深入理解栈</title>
       <link href="/posts/dff.html"/>
       <url>/posts/dff.html</url>
@@ -271,9 +298,9 @@
             
             <tag> Typora </tag>
             
-            <tag> C++ </tag>
-            
             <tag> auto </tag>
+            
+            <tag> C++ </tag>
             
             <tag> C++语言规则 </tag>
             
@@ -342,9 +369,9 @@
             
             <tag> Typora </tag>
             
-            <tag> auto </tag>
-            
             <tag> 开源代码 </tag>
+            
+            <tag> auto </tag>
             
             <tag> 开发工具 </tag>
             
@@ -388,13 +415,13 @@
       
         <tags>
             
-            <tag> Typora </tag>
-            
             <tag> 自己 </tag>
             
             <tag> 坚持 </tag>
             
             <tag> 生活 </tag>
+            
+            <tag> Typora </tag>
             
         </tags>
       
@@ -413,9 +440,9 @@
       
         <tags>
             
-            <tag> 梦想 </tag>
-            
             <tag> Typora </tag>
+            
+            <tag> 梦想 </tag>
             
         </tags>
       

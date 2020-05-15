@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-04-26T13:30:12.598Z</updated>
+  <updated>2020-05-15T12:09:02.872Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -17,11 +17,45 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计网 IP 知识全家桶，45 张图一套带走（一）</title>
+    <link href="https://www.xutguanpo.cn/posts/a9f7.html"/>
+    <id>https://www.xutguanpo.cn/posts/a9f7.html</id>
+    <published>2020-05-12T16:00:00.000Z</published>
+    <updated>2020-05-15T12:09:02.872Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;以下文章来源于互联网，本作者精心整理&lt;/p&gt;
+&lt;h2 id=&quot;前-言&quot;&gt;&lt;a href=&quot;#前-言&quot; class=&quot;headerlink&quot; title=&quot;前 言&quot;&gt;&lt;/a&gt;前 言&lt;/h2&gt;&lt;p&gt;前段时间，有读者希望发一篇关于 IP
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="IP协议" scheme="https://www.xutguanpo.cn/tags/IP%E5%8D%8F%E8%AE%AE/"/>
+    
+      <category term="IPv4/IPv6" scheme="https://www.xutguanpo.cn/tags/IPv4-IPv6/"/>
+    
+      <category term="IGMP" scheme="https://www.xutguanpo.cn/tags/IGMP/"/>
+    
+      <category term="网络通信" scheme="https://www.xutguanpo.cn/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="互联网相关的知识" scheme="https://www.xutguanpo.cn/tags/%E4%BA%92%E8%81%94%E7%BD%91%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>是时候深入理解栈</title>
     <link href="https://www.xutguanpo.cn/posts/dff.html"/>
     <id>https://www.xutguanpo.cn/posts/dff.html</id>
     <published>2020-04-25T16:00:00.000Z</published>
-    <updated>2020-04-26T13:30:12.598Z</updated>
+    <updated>2020-04-27T13:04:17.328Z</updated>
     
     <summary type="html">
     
@@ -374,9 +408,9 @@
     
       <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
-      <category term="C++" scheme="https://www.xutguanpo.cn/tags/C/"/>
-    
       <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
+    
+      <category term="C++" scheme="https://www.xutguanpo.cn/tags/C/"/>
     
       <category term="C++语言规则" scheme="https://www.xutguanpo.cn/tags/C-%E8%AF%AD%E8%A8%80%E8%A7%84%E5%88%99/"/>
     
@@ -464,9 +498,9 @@
     
       <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
-      <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
-    
       <category term="开源代码" scheme="https://www.xutguanpo.cn/tags/%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81/"/>
+    
+      <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
     
       <category term="开发工具" scheme="https://www.xutguanpo.cn/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
     
@@ -525,13 +559,13 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
-    
       <category term="自己" scheme="https://www.xutguanpo.cn/tags/%E8%87%AA%E5%B7%B1/"/>
     
       <category term="坚持" scheme="https://www.xutguanpo.cn/tags/%E5%9D%9A%E6%8C%81/"/>
     
       <category term="生活" scheme="https://www.xutguanpo.cn/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
@@ -556,9 +590,9 @@
     
     
     
-      <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
-    
       <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
+      <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
     
   </entry>
   
