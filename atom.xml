@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-05-15T12:09:02.872Z</updated>
+  <updated>2020-05-15T12:50:29.524Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计网 IP 知识全家桶，45 张图一套带走（二）</title>
+    <link href="https://www.xutguanpo.cn/posts/398d.html"/>
+    <id>https://www.xutguanpo.cn/posts/398d.html</id>
+    <published>2020-05-14T16:00:00.000Z</published>
+    <updated>2020-05-15T12:50:29.524Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;strong&gt;接着上篇文章叙述&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;点心-——-IP-协议相关技术&quot;&gt;&lt;a href=&quot;#点心-——-IP-协议相关技术&quot; class=&quot;headerlink&quot; title=&quot;点心 —— IP 协议相关技术&quot;&gt;&lt;/a&gt;点心 ——
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="IP协议" scheme="https://www.xutguanpo.cn/tags/IP%E5%8D%8F%E8%AE%AE/"/>
+    
+      <category term="IPv4/IPv6" scheme="https://www.xutguanpo.cn/tags/IPv4-IPv6/"/>
+    
+      <category term="IGMP" scheme="https://www.xutguanpo.cn/tags/IGMP/"/>
+    
+      <category term="网络通信" scheme="https://www.xutguanpo.cn/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
+    
+      <category term="互联网相关的知识" scheme="https://www.xutguanpo.cn/tags/%E4%BA%92%E8%81%94%E7%BD%91%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
   
   <entry>
     <title>计网 IP 知识全家桶，45 张图一套带走（一）</title>
