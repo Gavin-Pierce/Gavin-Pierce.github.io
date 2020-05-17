@@ -22,8 +22,6 @@
             
             <tag> 网络通信 </tag>
             
-            <tag> 互联网相关的知识 </tag>
-            
         </tags>
       
     </entry>
@@ -48,8 +46,6 @@
             <tag> IGMP </tag>
             
             <tag> 网络通信 </tag>
-            
-            <tag> 互联网相关的知识 </tag>
             
         </tags>
       
@@ -442,13 +438,13 @@
       
         <tags>
             
+            <tag> Typora </tag>
+            
             <tag> 自己 </tag>
             
             <tag> 坚持 </tag>
             
             <tag> 生活 </tag>
-            
-            <tag> Typora </tag>
             
         </tags>
       
@@ -467,9 +463,9 @@
       
         <tags>
             
-            <tag> Typora </tag>
-            
             <tag> 梦想 </tag>
+            
+            <tag> Typora </tag>
             
         </tags>
       

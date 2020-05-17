@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-05-15T12:50:29.524Z</updated>
+  <updated>2020-05-17T12:24:08.845Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.xutguanpo.cn/posts/398d.html"/>
     <id>https://www.xutguanpo.cn/posts/398d.html</id>
     <published>2020-05-14T16:00:00.000Z</published>
-    <updated>2020-05-15T12:50:29.524Z</updated>
+    <updated>2020-05-17T12:24:08.845Z</updated>
     
     <summary type="html">
     
@@ -46,8 +46,6 @@
     
       <category term="网络通信" scheme="https://www.xutguanpo.cn/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
     
-      <category term="互联网相关的知识" scheme="https://www.xutguanpo.cn/tags/%E4%BA%92%E8%81%94%E7%BD%91%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/"/>
-    
   </entry>
   
   <entry>
@@ -55,7 +53,7 @@
     <link href="https://www.xutguanpo.cn/posts/a9f7.html"/>
     <id>https://www.xutguanpo.cn/posts/a9f7.html</id>
     <published>2020-05-12T16:00:00.000Z</published>
-    <updated>2020-05-15T12:09:02.872Z</updated>
+    <updated>2020-05-17T12:23:57.459Z</updated>
     
     <summary type="html">
     
@@ -79,8 +77,6 @@
       <category term="IGMP" scheme="https://www.xutguanpo.cn/tags/IGMP/"/>
     
       <category term="网络通信" scheme="https://www.xutguanpo.cn/tags/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
-    
-      <category term="互联网相关的知识" scheme="https://www.xutguanpo.cn/tags/%E4%BA%92%E8%81%94%E7%BD%91%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
@@ -593,13 +589,13 @@
     
     
     
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
       <category term="自己" scheme="https://www.xutguanpo.cn/tags/%E8%87%AA%E5%B7%B1/"/>
     
       <category term="坚持" scheme="https://www.xutguanpo.cn/tags/%E5%9D%9A%E6%8C%81/"/>
     
       <category term="生活" scheme="https://www.xutguanpo.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
@@ -624,9 +620,9 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
-    
       <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
