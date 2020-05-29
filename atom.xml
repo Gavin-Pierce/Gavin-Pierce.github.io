@@ -436,9 +436,9 @@
     
     
     
-      <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
-    
       <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
+      <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
     
       <category term="C++" scheme="https://www.xutguanpo.cn/tags/C/"/>
     
@@ -526,13 +526,13 @@
     
     
     
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
       <category term="开源代码" scheme="https://www.xutguanpo.cn/tags/%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81/"/>
     
       <category term="auto" scheme="https://www.xutguanpo.cn/tags/auto/"/>
     
       <category term="开发工具" scheme="https://www.xutguanpo.cn/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
-    
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
@@ -620,9 +620,9 @@
     
     
     
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
-    
       <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
