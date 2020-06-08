@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-05-17T12:24:08.845Z</updated>
+  <updated>2020-06-08T13:41:55.025Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>超实用的网站来了</title>
+    <link href="https://www.xutguanpo.cn/posts/3de7.html"/>
+    <id>https://www.xutguanpo.cn/posts/3de7.html</id>
+    <published>2020-06-07T16:00:00.000Z</published>
+    <updated>2020-06-08T13:41:55.025Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;搞学习&quot;&gt;&lt;a href=&quot;#搞学习&quot; class=&quot;headerlink&quot; title=&quot;搞学习&quot;&gt;&lt;/a&gt;搞学习&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;CSDN： &lt;a href=&quot;https://www.csdn.net/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="电子书找寻" scheme="https://www.xutguanpo.cn/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E6%89%BE%E5%AF%BB/"/>
+    
+      <category term="代码仓库" scheme="https://www.xutguanpo.cn/tags/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/"/>
+    
+      <category term="小工具" scheme="https://www.xutguanpo.cn/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="PDF处理" scheme="https://www.xutguanpo.cn/tags/PDF%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
   
   <entry>
     <title>计网 IP 知识全家桶，45 张图一套带走（二）</title>
@@ -567,10 +599,10 @@
   
   <entry>
     <title>做自己</title>
-    <link href="https://www.xutguanpo.cn/posts/3eeb.html"/>
-    <id>https://www.xutguanpo.cn/posts/3eeb.html</id>
+    <link href="https://www.xutguanpo.cn/posts/ac21.html"/>
+    <id>https://www.xutguanpo.cn/posts/ac21.html</id>
     <published>2020-02-14T16:00:00.000Z</published>
-    <updated>2020-03-16T07:02:10.126Z</updated>
+    <updated>2020-06-08T13:39:47.840Z</updated>
     
     <summary type="html">
     
@@ -596,33 +628,6 @@
       <category term="坚持" scheme="https://www.xutguanpo.cn/tags/%E5%9D%9A%E6%8C%81/"/>
     
       <category term="生活" scheme="https://www.xutguanpo.cn/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Dream</title>
-    <link href="https://www.xutguanpo.cn/posts/3eeb.html"/>
-    <id>https://www.xutguanpo.cn/posts/3eeb.html</id>
-    <published>2020-02-13T16:00:00.000Z</published>
-    <updated>2020-03-16T06:36:28.780Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。—
-        
-      
-    
-    </summary>
-    
-    
-    
-      <category term="梦想" scheme="https://www.xutguanpo.cn/tags/%E6%A2%A6%E6%83%B3/"/>
-    
-      <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
     
   </entry>
   
