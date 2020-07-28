@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.xutguanpo.cn/"/>
-  <updated>2020-07-28T09:48:14.945Z</updated>
+  <updated>2020-07-28T09:53:57.579Z</updated>
   <id>https://www.xutguanpo.cn/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>如何改变自己的坏习惯</title>
     <link href="https://www.xutguanpo.cn/posts/5e89.html"/>
     <id>https://www.xutguanpo.cn/posts/5e89.html</id>
-    <published>2020-06-27T16:00:00.000Z</published>
-    <updated>2020-07-28T09:48:14.945Z</updated>
+    <published>2020-07-27T16:00:00.000Z</published>
+    <updated>2020-07-28T09:53:57.579Z</updated>
     
     <summary type="html">
     
@@ -620,9 +620,9 @@
     
     
     
-      <category term="VS code" scheme="https://www.xutguanpo.cn/tags/VS-code/"/>
-    
       <category term="Typora" scheme="https://www.xutguanpo.cn/tags/Typora/"/>
+    
+      <category term="VS code" scheme="https://www.xutguanpo.cn/tags/VS-code/"/>
     
       <category term="Markdown" scheme="https://www.xutguanpo.cn/tags/Markdown/"/>
     
