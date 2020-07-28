@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="C++为什么要引入auto, HTML,github,JavaScript,c++,hexo,Vue.js等">
+    <meta name="keywords" content="如何改变自己的坏习惯, HTML,github,JavaScript,c++,hexo,Vue.js等">
     <meta name="description" content="专注于C/C++,分享生活,分享知识">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>C++为什么要引入auto | Gavin</title>
+    <title>如何改变自己的坏习惯 | Gavin</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/libs/awesome/css/all.css">
@@ -443,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">C++为什么要引入auto</h1>
+                    <h1 class="description center-align post-title">如何改变自己的坏习惯</h1>
                 </div>
             </div>
         </div>
@@ -565,20 +565,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
+                            <a href="/tags/%E8%87%AA%E5%BE%8B/">
+                                <span class="chip bg-color">自律</span>
                             </a>
                         
-                            <a href="/tags/auto/">
-                                <span class="chip bg-color">auto</span>
+                            <a href="/tags/%E5%8F%8D%E9%A6%88/">
+                                <span class="chip bg-color">反馈</span>
                             </a>
                         
-                            <a href="/tags/C/">
-                                <span class="chip bg-color">C++</span>
+                            <a href="/tags/%E5%81%A5%E5%BA%B7%E7%9A%84%E4%B9%A0%E6%83%AF/">
+                                <span class="chip bg-color">健康的习惯</span>
                             </a>
                         
-                            <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%A7%84%E5%88%99/">
-                                <span class="chip bg-color">C++语言规则</span>
+                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%88%E7%8E%87/">
+                                <span class="chip bg-color">学习的效率</span>
                             </a>
                         
                     </div>
@@ -593,7 +593,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-02-23
+                    2020-06-28
                 </div>
                 
 
@@ -602,14 +602,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -625,62 +625,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-为什么要引入auto？"><a href="#1-为什么要引入auto？" class="headerlink" title="1. 为什么要引入auto？"></a>1. 为什么要引入auto？</h2><p>通常，在把表达式的值赋给变量时，我们需要在声明变量时准确地声明是什么类型。但是，有时候很难知道表达式到底是什么类型的，因此引入了auto类型说明符。auto会让编译器通过初始值来推算变量的类型。</p>
-<h2 id="2-使用auto需要注意的是"><a href="#2-使用auto需要注意的是" class="headerlink" title="2. 使用auto需要注意的是"></a>2. 使用auto需要注意的是</h2><h3 id="auto定义的变量必须有初始值"><a href="#auto定义的变量必须有初始值" class="headerlink" title="auto定义的变量必须有初始值"></a><strong>auto定义的变量必须有初始值</strong></h3><p>cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> item <span class="token operator">=</span> val1 <span class="token operator">+</span> val2<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//由val1和val2相加的结果可以推断出item的类型 </span></code></pre>
-<h3 id="一条auto声明语句只能有一个基本数据类型"><a href="#一条auto声明语句只能有一个基本数据类型" class="headerlink" title="一条auto声明语句只能有一个基本数据类型"></a><strong>一条auto声明语句只能有一个基本数据类型</strong></h3><p>cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//正确：i是整数，p是整型指针</span>
-<span class="token keyword">auto</span> sz <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> pi <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//错误：sz和pi的类型不一致</span></code></pre>
-<h3 id="编译器会改变推断结果使其更符合初始化规则"><a href="#编译器会改变推断结果使其更符合初始化规则" class="headerlink" title="编译器会改变推断结果使其更符合初始化规则"></a><strong>编译器会改变推断结果使其更符合初始化规则</strong></h3><p>比如，我们在使用一个引用时，其实就是使用该引用的对象。特别是引用被用作初始值时，真正参加初始化的其实是引用对象的值。此时编译器以引用对象的类型作为auto的类型：</p>
-<p>cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>r <span class="token operator">=</span> i<span class="token punctuation">;</span>
-<span class="token keyword">auto</span> a <span class="token operator">=</span> r<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//a是一个整数（r是i的别名，而i是一个整数）</span></code></pre>
-<h3 id="auto一般会忽略顶层const，保留底层const"><a href="#auto一般会忽略顶层const，保留底层const" class="headerlink" title="auto一般会忽略顶层const，保留底层const"></a><strong>auto一般会忽略顶层const，保留底层const</strong></h3><blockquote>
-<p>顶层const表示指针本身是个常量<br>底层const表示指针所指的对象是个常量</p>
-</blockquote>
-<ol>
-<li><p>比如当初始值指向一个常量指针时：</p>
-<p>cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">const</span> <span class="token keyword">int</span> ci <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cr <span class="token operator">=</span> ci<span class="token punctuation">;</span>
-<span class="token keyword">auto</span> b <span class="token operator">=</span> ci<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//b是一个整数（ci的顶层特性被忽略掉了）</span>
-<span class="token keyword">auto</span> c <span class="token operator">=</span> cr<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//c是一个整数（cr是ci的别名，而ci本身是一个顶层const）</span>
-<span class="token keyword">auto</span> d <span class="token operator">=</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//d是一个整型指针（整数的地址就是指向整数的指针）</span>
-<span class="token keyword">auto</span> e <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//e是一个指向整数常量的指针（对常量对象取地址是一种底层const）</span></code></pre>
-</li>
-<li><p>如果希望推断出的auto类型是一个顶层const，需要明确指出：</p>
-<p>cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">const</span> <span class="token keyword">auto</span> f <span class="token operator">=</span> ci<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//ci的推演类型是int，f是const int</span></code></pre>
-</li>
-<li><p>引用的类型设为auto，原来的初始化规则仍然适用</p>
-<p>cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> <span class="token operator">&amp;</span>g <span class="token operator">=</span> ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//g是一个整型常量引用，绑定到ci</span>
-<span class="token keyword">auto</span> <span class="token operator">&amp;</span>h <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误：不能为非常量引用绑定字面值</span>
-<span class="token keyword">const</span> <span class="token keyword">auto</span> <span class="token operator">&amp;</span>j <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//正确：可以为常量引用绑定字面值</span></code></pre>
-<p>设置一个auto类型的引用时，初始值中的顶层常量属性仍然保留。和往常一样，如果我们给初值绑定一个引用，则此时的常量就不是顶层常量了。</p>
-</li>
-<li><p>要在一条语句中定义多个变量，切记，符号&amp;和*只从属于某个声明符，而非基本数据类型的一部分，因此初始值必须是同一种类型。</p>
-<p>cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> k <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">&amp;</span>l <span class="token operator">=</span> i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//k是整数，l是整型引用</span>
-<span class="token keyword">auto</span> <span class="token operator">&amp;</span>m <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//m是整型常量的引用，p是指向整型常量的指针</span>
-<span class="token keyword">auto</span> <span class="token operator">&amp;</span>n <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">*</span>p2 <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误：i是整型int，而&amp;ci是整型常量const int</span></code></pre>
-</li>
-</ol>
-<h2 id="3-完整实例代码"><a href="#3-完整实例代码" class="headerlink" title="3. 完整实例代码"></a>3. 完整实例代码</h2><p>​    cpp</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">auto</span> item <span class="token operator">=</span> val1 <span class="token operator">+</span> val2<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//由val1和val2相加的结果可以推断出item的类型 </span>
-<span class="token keyword">auto</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//正确：i是整数，p是整型指针</span>
-<span class="token keyword">auto</span> sz <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> pi <span class="token operator">=</span> <span class="token number">3.14</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//错误：sz和pi的类型不一致</span>
-<span class="token keyword">const</span> <span class="token keyword">int</span> ci <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">&amp;</span>cr <span class="token operator">=</span> ci<span class="token punctuation">;</span>
-<span class="token keyword">auto</span> b <span class="token operator">=</span> ci<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//b是一个整数（ci的顶层特性被忽略掉了）</span>
-<span class="token keyword">auto</span> c <span class="token operator">=</span> cr<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//c是一个整数（cr是ci的别名，而ci本身是一个顶层const）</span>
-<span class="token keyword">auto</span> d <span class="token operator">=</span> <span class="token operator">&amp;</span>i<span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//d是一个整型指针（整数的地址就是指向整数的指针）</span>
-<span class="token keyword">auto</span> e <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//e是一个指向整数常量的指针（对常量对象取地址是一种底层const）</span>
-<span class="token keyword">const</span> <span class="token keyword">auto</span> f <span class="token operator">=</span> ci<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//ci的推演类型是int，f是const int</span>
-<span class="token keyword">auto</span> <span class="token operator">&amp;</span>g <span class="token operator">=</span> ci<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//g是一个整型常量引用，绑定到ci</span>
-<span class="token keyword">auto</span> <span class="token operator">&amp;</span>h <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//错误：不能为非常量引用绑定字面值</span>
-<span class="token keyword">const</span> <span class="token keyword">auto</span> <span class="token operator">&amp;</span>j <span class="token operator">=</span> <span class="token number">42</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//正确：可以为常量引用绑定字面值</span>
-<span class="token keyword">auto</span> k <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">&amp;</span>l <span class="token operator">=</span> i<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//k是整数，l是整型引用</span>
-<span class="token keyword">auto</span> <span class="token operator">&amp;</span>m <span class="token operator">=</span> ci<span class="token punctuation">,</span> <span class="token operator">*</span>p <span class="token operator">=</span> ci<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//m是整型常量的引用，p是指向整型常量的指针</span>
-<span class="token keyword">auto</span> <span class="token operator">&amp;</span>n <span class="token operator">=</span> i<span class="token punctuation">,</span> <span class="token operator">*</span>p2 <span class="token operator">=</span> <span class="token operator">&amp;</span>ci<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误：i是整型int，而&amp;ci是整型常量const int</span></code></pre>
+                <p>时间过得很快，转眼间一个多月过去了，最近小编一直忙着做课题，几乎天天被自己的导师找，一直催促着需要结果；另一方面一直在忙着自己找工作，看各种招聘要求和公告，投简历，刷题，准备面试。发现自己的效率很是低下，<strong>对待一个问题没有深入的思考，只是一味的赶进度，这样自己的课题能做好吗？这样自己的工作能找好吗？没有对时间进行储备，哪来的厚积薄发呢。</strong>因此，小编需要自己停下来，进行思考思考自己的未来；小编积累了一段时间，也看了很多相关的书籍与文章后，感到有了些收获，分享给各位好友，希望对大家有所帮助。</p>
+<p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/a.jpg" alt=""></p>
+<p>1、<strong>躺在床上的时候，不要玩手机</strong>。大学的时候喜欢在床上玩手机，结果经常会不知不觉玩到很晚，第二天经常会因为睡眠不足而精力不足。现在，躺在床上的时候就把手机放在一旁，睡眠效率提升很多。<strong>重要的事说三遍，不要把手机放在床的四周，不要把手机放在床的四周，不要把手机放在床的四周。</strong></p>
+<p>2、<strong>2 分钟法则：如果一件事情，在 2 分钟内可以处理完，那么就马上着手解决它</strong>。因为很多这样的事情，甚至没必要排到待做事项当中，越早解决，越节省时间。</p>
+<p>3、<strong>好记性不如烂笔头</strong>。当自己的脑海中有什么好的想法的时候，马上写下来。永远记住，写下来的东西，才是你的。而且，在写的时候也可以整理自己大脑中的想法，使之更加完善。</p>
+<p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/c.gif" alt=""></p>
+<p>4、<strong>你是想做事情，还是想把事情做完</strong>。读书时代，完成老师布置的作业的时候，想的是什么时候能够做完，而不是去思考我在这个作业当中发现了哪些不足，以及自己从中获得了哪些收获。刚开始工作时，也把这种不好的习惯带了过来，经常以为只要把事情解决了，就可以了。后来才发现，比把事情做完更重要的，是你在做这件事情当中的收获与成长，而这，会在很大程度上影响你以后的发展。<strong>人们总是好高骛远地盯着远方，却从不曾认真思考如何走好脚下的路。</strong></p>
+<p>5、<strong>良好的睡眠、饮食、运动习惯，会在很大程度上提升你的工作效率</strong>。只有吃好、睡好、锻炼好，工作才能更加有效率。如非必要，不要熬夜，熬夜真的真的很伤身体。</p>
+<p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/d.jpg" alt=""></p>
+<p>6、<strong>告别伪勤奋，重视结果反馈，以结果为导向</strong>，一定要重视结果给你的反馈，<strong>结果不理想，就说明你的努力方式是不正确的，是有问题的，世间的万事万物，都有其发展的背后规律，他们是绝对不会因为人的主观意识，而进行改变的，就像庄稼春种秋收，太阳东升西落。</strong>我们要做的就是，发现影响结果的真实因素，然后在这些真实的因素上，进行刻苦和努力，取得自己心中理想的结果。<strong>但是最最重要的，还是要结合自身的经历，总结出那些对自己有效的方法和规律</strong>，毕竟每个人都是独立的个体，适合别人的，不一定也适用于你。</p>
+<p>7.希望现在阅读文章的你，所有的努力，都能够如你所愿。<strong>所以，如果对你有所启发，请转载，谢谢你。</strong></p>
+<p><img src="./1.gif" data-original="https://cdn.jsdelivr.net/gh/Gavin-Pierce/picture/%E9%A3%8E%E6%99%AF/f.jpg" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -734,20 +690,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
+                                <a href="/tags/%E8%87%AA%E5%BE%8B/">
+                                    <span class="chip bg-color">自律</span>
                                 </a>
                             
-                                <a href="/tags/auto/">
-                                    <span class="chip bg-color">auto</span>
+                                <a href="/tags/%E5%8F%8D%E9%A6%88/">
+                                    <span class="chip bg-color">反馈</span>
                                 </a>
                             
-                                <a href="/tags/C/">
-                                    <span class="chip bg-color">C++</span>
+                                <a href="/tags/%E5%81%A5%E5%BA%B7%E7%9A%84%E4%B9%A0%E6%83%AF/">
+                                    <span class="chip bg-color">健康的习惯</span>
                                 </a>
                             
-                                <a href="/tags/C-%E8%AF%AD%E8%A8%80%E8%A7%84%E5%88%99/">
-                                    <span class="chip bg-color">C++语言规则</span>
+                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%88%E7%8E%87/">
+                                    <span class="chip bg-color">学习的效率</span>
                                 </a>
                             
                         </div>
@@ -935,29 +891,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/3626.html">
+                <a href="/posts/5e89.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="研究生毕业论文攻略">
+                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="如何改变自己的坏习惯">
                         
-                        <span class="card-title">研究生毕业论文攻略</span>
+                        <span class="card-title">如何改变自己的坏习惯</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            如何撰写毕业生论文，此篇文章帮你统统搞定
+                            还为学习办公发愁吗？快来这里
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -966,23 +923,24 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/">
-                        <span class="chip bg-color">毕业论文</span>
+                    <a href="/tags/%E8%87%AA%E5%BE%8B/">
+                        <span class="chip bg-color">自律</span>
                     </a>
                     
-                    <a href="/tags/%E6%9F%A5%E9%87%8D/">
-                        <span class="chip bg-color">查重</span>
+                    <a href="/tags/%E5%8F%8D%E9%A6%88/">
+                        <span class="chip bg-color">反馈</span>
                     </a>
                     
-                    <a href="/tags/%E6%8E%92%E7%89%88/">
-                        <span class="chip bg-color">排版</span>
+                    <a href="/tags/%E5%81%A5%E5%BA%B7%E7%9A%84%E4%B9%A0%E6%83%AF/">
+                        <span class="chip bg-color">健康的习惯</span>
                     </a>
                     
-                    <a href="/tags/%E7%AD%94%E8%BE%A9/">
-                        <span class="chip bg-color">答辩</span>
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%95%88%E7%8E%87/">
+                        <span class="chip bg-color">学习的效率</span>
                     </a>
                     
                 </div>
@@ -996,24 +954,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/ea98.html">
+                <a href="/posts/3de7.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="ICP备案">
+                        <img src="https://cdn.jsdelivr.net/gh/Gavin-Pierce/Gavin-Pierce.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="超实用的网站来了">
                         
-                        <span class="card-title">ICP备案</span>
+                        <span class="card-title">超实用的网站来了</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ICP备案经历的事情
+                            还为学习办公发愁吗？快来这里
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-08
                             </span>
                         <span class="publish-author">
                             
@@ -1026,16 +984,20 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ICP/">
-                        <span class="chip bg-color">ICP</span>
+                    <a href="/tags/%E7%94%B5%E5%AD%90%E4%B9%A6%E6%89%BE%E5%AF%BB/">
+                        <span class="chip bg-color">电子书找寻</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%9A%E5%AE%A2/">
-                        <span class="chip bg-color">博客</span>
+                    <a href="/tags/%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93/">
+                        <span class="chip bg-color">代码仓库</span>
                     </a>
                     
-                    <a href="/tags/%E5%9F%9F%E5%90%8D/">
-                        <span class="chip bg-color">域名</span>
+                    <a href="/tags/%E5%B0%8F%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">小工具</span>
+                    </a>
+                    
+                    <a href="/tags/PDF%E5%A4%84%E7%90%86/">
+                        <span class="chip bg-color">PDF处理</span>
                     </a>
                     
                 </div>
